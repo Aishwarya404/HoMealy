@@ -13,7 +13,7 @@ HEROKU LINK
 
 ITERATION 1
 
-ITERATION 2
+ITERATION 2 
 
 
 This README would normally document whatever steps are necessary to get the
