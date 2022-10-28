@@ -1,5 +1,21 @@
 # README
 
+TEAM MEMBERS
+Aishwarya Sivakumar - as6418
+Sairam Haribabu - sh4188
+Roshan Babu Koottiyaniyel - rbk2145
+
+INSTRUCTIONS TO RUN
+
+INSTRUCTIONS TO TEST
+
+HEROKU LINK
+
+ITERATION 1
+
+ITERATION 2 
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
