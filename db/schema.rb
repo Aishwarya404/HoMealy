@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_29_185422) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_212453) do
+  create_table "dishes", force: :cascade do |t|
+    t.string "dishname"
+    t.string "user_email"
+    t.float "price"
+    t.integer "quantity"
+    t.string "cuisine"
+    t.string "description"
+  end
+
   create_table "users", primary_key: "email", id: :string, force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
