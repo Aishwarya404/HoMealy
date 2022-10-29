@@ -1,0 +1,13 @@
+<h1> This is SIGN UP </h1>
+
+<%= form_for @user do |f| %>
+    <%= f.label :EMAIL %>
+    <%= f.text_field :email %> <br>
+    <%= f.label :PASSWORD %>
+    <%= f.password_field :password %> <br>
+    <%= f.label :NAME %>
+    <%= f.text_field :name %> <br>
+    <%= f.label :ZIPCODE %>
+    <%= f.text_field :zipcode %> <br>
+    <%= f.submit "Create Account" %>
+<% end %>
