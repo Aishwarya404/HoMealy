@@ -18,7 +18,11 @@ module NavigationHelpers
 			#   when /^(.*)'s profile page$/i
 			#     user_profile_path(User.find_by_login($1))
 			when "the Home page" then "/"
+            when "the Main page" then "/home/main"
+			when "the Log Out page" then "/logout"	
+			when "the Add Dish page" then "/dishes/new"	
 			when "the Sign Up page" then "/users/new"
+
 			else
 				begin
 					page_name =~ /^the (.*) page$/
