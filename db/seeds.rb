@@ -9,8 +9,8 @@ Dish.destroy_all
 User.destroy_all
 
 dishes = [
-    {"dishname": "Fried Rice", "user_email": "aish", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "World's best fried rice!"},
-    {"dishname": "Pav Bhaji", "user_email": "aish", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "World's best Paaaav!"}
+    {"dishname": "Fried Rice", "user_email": "aish@gmail.com", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "World's best fried rice!"},
+    {"dishname": "Pav Bhaji", "user_email": "sai@gmail.com", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "World's best Paaaav!"}
 ]
 
 dishes.each do |dish|
@@ -20,8 +20,8 @@ end
 
 
 users = [
-    {"email": "sai", "password": "ram", "name": "sairam", "zipcode": "10027"},
-    {"email": "aish", "password": "warya", "name": "aishwarya", "zipcode": "10027"},
+    {"email": "sai@gmail.com", "password": "ram", "name": "sairam", "zipcode": "10027"},
+    {"email": "aish@gmail.com", "password": "warya", "name": "aishwarya", "zipcode": "10027"},
 ]
 
 users.each do |user|

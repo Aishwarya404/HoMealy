@@ -12,7 +12,7 @@ Background: on the starting page, un-authenticated
 
 Scenario: create an account
 
-  Then I should see "Welcome"
+  Then I should see "Welcome to HoMealy"
   Given I follow "SIGN UP"
 
 #   Then I should be on the Sign Up page
@@ -24,23 +24,38 @@ Scenario: create an account
   And I press "Create Account"
   Then I should see "This is LOG IN"
 
-Scenario: signing in
+Scenario: Create an account with Invalid email
 
+  Then I should see "Welcome"
+  Given I follow "SIGN UP"
   Given I have an account with email: "test@test.com" and password: "test"
-  And I follow "LOG IN"
-  And I fill in "email" with "test@test.com"
-  And I fill in "password" with "test"
-  And I press "LOG IN"
-  Then I should see "Dishes"
 
-Scenario: signing in with wrong credentials
+  Then I should see "This is SIGN UP"
+  Given I fill in "user_email" with "test"
+  And I fill in "user_name" with "test"
+  And I fill in "user_password" with "test"
+  And I fill in "user_zipcode" with "10027"
+  And I press "Create Account"
+  Then I should not see "This is LOG IN"   
+  And I should see "SIGN UP"
+  #To Do : Add Error text
 
+Scenario: Create an account with Existing email (duplicate check)
+
+  Then I should see "Welcome"
   Given I have an account with email: "test@test.com" and password: "test"
-  And I follow "LOG IN"
-  And I fill in "email" with "test@test.com"
-  And I fill in "password" with "wrongpassword"
-  And I press "LOG IN"
-  Then I should not see "Dishes"
+  Given I follow "SIGN UP"
+
+  Then I should see "This is SIGN UP"
+  Given I fill in "user_email" with "test@test.com"
+  And I fill in "user_name" with "test"
+  And I fill in "user_password" with "test"
+  And I fill in "user_zipcode" with "10027"
+  And I press "Create Account"
+  Then I should not see "This is LOG IN"   
+  And I should see "SIGN UP"
+  #To Do : Add Error text
+
 
 
 
