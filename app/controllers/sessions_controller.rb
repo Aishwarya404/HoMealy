@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete(:email)
-        redirect_to login_path, notice: "Logged out!"
+        redirect_to home_index_path
     end
 end
