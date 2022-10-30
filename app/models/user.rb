@@ -12,7 +12,7 @@ class User < ApplicationRecord
             curr_user = User.new(user)
             curr_user.save!
         end
-
+        
         us = User.find_by_sql(["select name from users where users.zipcode = '10027'"])
         return [us[0]["name"]]
         
