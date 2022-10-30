@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Defines the root path route ("/")
-  root "home#index"
+  root :to => "home#index"
 
   resources :users, only:[:new, :create]
   
