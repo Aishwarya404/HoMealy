@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should fetch user from zipcode" do
+    expect(User.add_users()).to contain_exactly("sairam")
+  end
 end

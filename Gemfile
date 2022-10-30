@@ -73,7 +73,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "cucumber-rails"
+  # gem "cucumber-rails"
+  gem 'cucumber-rails', require: false
 end
 
 gem "pg", "~> 1.4"
+
+gem 'simplecov', require: false, group: :test
