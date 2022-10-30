@@ -73,3 +73,5 @@ group :test do
   gem "webdrivers"
   gem "cucumber-rails", require: false
 end
+
+gem "pg", "~> 1.4"
