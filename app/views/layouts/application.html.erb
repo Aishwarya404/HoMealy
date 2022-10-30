@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <%= "Logged in as #{current_user.name}" %> | <%= link_to 'Home', home_main_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+    <% end %>
     <%= yield %>
+    <% if notice %>
+      <%= notice %>
+	  <% end %>
+	
+	  <% if alert %>
+      <%= alert %>
+	  <% end %>
   </body>
 </html>
