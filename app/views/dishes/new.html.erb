@@ -1,0 +1,17 @@
+<h1> This is TO ADD A NEW DISH </h1>
+
+<%= form_for @dish do |f| %>
+    <%= f.label :DISHNAME %>
+    <%= f.text_field :dishname %> <br>
+    <%= f.label :EMAIL %>
+    <%= f.text_field :user_email %> <br>
+    <%= f.label :PRICE %>
+    <%= f.text_field :price %> <br>
+    <%= f.label :CUISINE %>
+    <%= f.text_field :cuisine %> <br>
+    <%= f.label :QUANTITY %>
+    <%= f.text_field :quantity %> <br>
+    <%= f.label :DESCRIPTION %>
+    <%= f.text_field :description %> <br>
+    <%= f.submit "Upload Dish" %>
+<% end %>

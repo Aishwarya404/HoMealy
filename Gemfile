@@ -28,6 +28,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'bcrypt-ruby'
+
+gem 'database_cleaner'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -71,7 +73,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "cucumber-rails", require: false
+  gem "cucumber-rails"
 end
 
 gem "pg", "~> 1.4"
