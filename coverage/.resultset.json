@@ -3,6 +3,7 @@
     "coverage": {
       "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/spec/rails_helper.rb": {
         "lines": [
+<<<<<<< Updated upstream
           null,
           1,
           1,
@@ -27,6 +28,14 @@
           null,
           null,
           null,
+=======
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           null,
           null,
@@ -37,6 +46,7 @@
           1,
           null,
           1,
+<<<<<<< Updated upstream
           null,
           null,
           null,
@@ -64,6 +74,9 @@
           null,
           1,
           null,
+=======
+          1,
+>>>>>>> Stashed changes
           null,
           null
         ]
@@ -106,6 +119,17 @@
       "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/boot.rb": {
         "lines": [
           1,
+<<<<<<< Updated upstream
+=======
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+>>>>>>> Stashed changes
           null,
           1,
           1
@@ -277,6 +301,7 @@
           null,
           null,
           1,
+<<<<<<< Updated upstream
           null,
           1,
           1,
@@ -318,6 +343,9 @@
           null,
           null,
           1,
+=======
+          2,
+>>>>>>> Stashed changes
           null,
           1,
           1,
@@ -402,6 +430,10 @@
         ]
       }
     },
+<<<<<<< Updated upstream
     "timestamp": 1667176772
+=======
+    "timestamp": 1667180916
+>>>>>>> Stashed changes
   }
 }

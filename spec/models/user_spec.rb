@@ -37,4 +37,20 @@ RSpec.describe User, type: :model do
     end
     it { should be_invalid }
   end
+
+#   describe "check login functionality" do
+#     before do
+#       @user = User.new(name: "User", email: "other@example.com", password: "abcdef", zipcode: "10027")
+#     end
+#     before { @user.save! }
+#     let(:found_user) { User.find_by(email: @user.email) }
+#     it "jdfb" do
+#       puts "sjhdcbjkc"
+#       puts found_user["zipcode"]
+#     end
+#     describe "with valid password" do
+#     #   it { should eq found_user.authenticate(@user.password) }
+# 		expect(@user.password).to eq(found_user["password"])
+#     end
+#   end
 end

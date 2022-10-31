@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
     def create
         @user = User.find_by(email: params[:email])
+        puts "hellooo"
+        puts params.inspect
+        puts params[:password]
         if !!@user && @user.authenticate(params[:password])
             session[:email] = @user.email
             redirect_to home_main_path

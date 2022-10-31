@@ -3,8 +3,6 @@ class DishesController < ApplicationController
         @dish = Dish.new(dish_params)
         if @dish.save
             redirect_to home_main_path
-        else
-            render :new
         end
     end
 

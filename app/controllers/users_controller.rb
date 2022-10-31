@@ -4,8 +4,6 @@ class UsersController < ApplicationController
         if @user.save
             session[:email] = @user.email
             redirect_to login_path
-        else
-            render :new
         end
     end
 

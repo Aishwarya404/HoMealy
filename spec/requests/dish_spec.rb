@@ -11,12 +11,4 @@ RSpec.describe "Dishes", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe "create a new dish" do
-    it "successfully creates a dish" do
-      get "/dishes/new"
-      dish = Dish.create(dishname: "Test dish", user_email: "xyz@gmail.com", "price": 20, "quantity": 5, "cuisine": "Indian")
-      expect(response).to have_http_status(:success)
-    end
-  end
 end
