@@ -5,7 +5,7 @@ class User < ApplicationRecord
     def self.add_users()
         
         users = [
-            {"email": "sai@gmail.com", "password_digest": "ram", "name": "sairam", "zipcode": "10027"},
+            {"email": "sai@columbia.edu", "password_digest": "ram", "name": "sairam", "zipcode": "10027"},
             {"email": "aish@gmail.com", "password_digest": "warya", "name": "aishwarya", "zipcode": "10028"},
 ]
         users.each do |user|
