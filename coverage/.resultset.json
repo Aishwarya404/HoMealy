@@ -1,111 +1,35 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/spec/rails_helper.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/dishes_controller.rb": {
         "lines": [
-<<<<<<< Updated upstream
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-=======
           1,
           1,
           1,
           1,
           1,
-          1,
->>>>>>> Stashed changes
           null,
           null,
           null,
           1,
-          null,
-          0,
-          null,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           null,
           null,
           1,
           null,
-=======
           1,
->>>>>>> Stashed changes
+          1,
           null,
           null
         ]
       },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/environment.rb": {
-        "lines": [
-          null,
-          1,
-          null,
-          null,
-          1
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/application.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null,
-          1,
-          null,
-          null,
-          null,
           1,
           null,
           1,
-          1,
-          null,
-          1,
-          null,
-          null,
+          4,
           null,
           null,
           null,
@@ -116,197 +40,9 @@
           null
         ]
       },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/boot.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/controllers/user_spec.rb": {
         "lines": [
           1,
-<<<<<<< Updated upstream
-=======
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
->>>>>>> Stashed changes
-          null,
-          1,
-          1
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/environments/test.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/initializers/assets.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/initializers/content_security_policy.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/initializers/inflections.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/initializers/permissions_policy.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/config/routes.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-<<<<<<< Updated upstream
-          null,
-          1,
-          1,
-          null,
-          1,
           1,
           1,
           null,
@@ -314,38 +50,135 @@
           1,
           1,
           1,
-          null,
           1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/app/helpers/home_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/app/models/dish.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-=======
           2,
->>>>>>> Stashed changes
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/helpers/home_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/models/dish_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/dish.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -355,14 +188,14 @@
           null
         ]
       },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/app/models/application_record.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/spec/models/user_spec.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/models/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -403,10 +236,26 @@
           null,
           2,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/roshan/Coursework/Sem 3/ESaaS/HoMealy/app/models/user.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -419,21 +268,135 @@
           null,
           null,
           null,
-          3,
+          5,
           null,
           1,
           1,
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/requests/dish_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/requests/user_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/spec/views/home/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-<<<<<<< Updated upstream
-    "timestamp": 1667176772
-=======
-    "timestamp": 1667180916
->>>>>>> Stashed changes
+    "timestamp": 1667188375
   }
 }

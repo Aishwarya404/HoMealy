@@ -10,7 +10,7 @@ User.destroy_all
 
 dishes = [
     {"dishname": "Fried Rice", "user_email": "aish@gmail.com", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "World's best fried rice!"},
-    {"dishname": "Pav Bhaji", "user_email": "aish@gmail.com", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "World's best Paaaav!"}
+    {"dishname": "Pav Bhaji", "user_email": "sai@gmail.com", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "World's best Paaaav!"}
 ]
 
 dishes.each do |dish|

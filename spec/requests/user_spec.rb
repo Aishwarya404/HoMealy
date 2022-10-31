@@ -11,21 +11,6 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  # describe "GET /login" do
-  #   before do
-  #     @user = User.new(name: "Other User", email: "other@example.com", password: "abcdef", "zipcode": "
-  #     10027")
-  #   end
-  #   let(:found_user) { User.find_by(email: @user.email) }
-  #   # it "returns http success" do
-  #   #   get "/login"
-  #   #   expect(response).to have_http_status(:success)
-  #   # end
-  #   describe "with valid password" do
-  #     it { should eq found_user.authenticate(@user.password) }
-  #   end
-  # end
-
   describe "GET /signup" do
     it "returns http success" do
       get "/users/new"
@@ -47,20 +32,17 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  # describe "POST/login" do
-  #   # before do
-  #   #   @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027")
-  #   #   @user.save!
-  #   # end
-  #   it "redirects the user" do
-  #     post '/login', params: { session: { email: "sai@gmail.com", password: "ram" } }
-  #     puts response.inspect
-  #     expect(response).to redirect_to(login_path)
+  describe "POST/login" do
+    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027")
+    @user.save
+    it "correct password" do
+      post '/login', params: { email: "bloop@example.com", password: "abcdef" }
+      expect(response).to redirect_to(home_main_path)
+    end
 
-  #     # post :create, params: { user: { name: "User", email: "othr@example.com", password: "abcdef", zipcode: "10027" } }
-  #     # follow_redirect!
-  #     # expect(response.body).to include("You have been signed in")
-  #   end
-  # end
-
+    it "wrong password" do
+      post '/login', params: { session: { email: "bloop@example.com", password: "xxxxxx" } }
+      expect(response).to redirect_to(login_path)
+    end
+  end
 end
