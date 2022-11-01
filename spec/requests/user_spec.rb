@@ -3,24 +3,25 @@ require 'simplecov'
 SimpleCov.start
 
 RSpec.describe "Users", type: :request do
-  describe "GET /index" do
-    it "returns http success" do
-      get "/home/index"
-      expect(response).to have_http_status(:success)
-      expect(response.body).to include("Welcome to HoMealy !")
-    end
-  end
+  # describe "GET /index" do
+  #   it "returns http success" do
+  #     get "/home/index"
+  #     expect(response).to have_http_status(:success)
+  #     expect(response.body).to include("Welcome to HoMealy !")
+  #   end
+  # end
 
+
+  # describe "GET /main" do
+  #   it "returns http success" do
+  #     get "/home/main"
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
+  
   describe "GET /signup" do
     it "returns http success" do
       get "/users/new"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /main" do
-    it "returns http success" do
-      get "/home/main"
       expect(response).to have_http_status(:success)
     end
   end

@@ -1,13 +1,10 @@
 class User < ApplicationRecord
     has_secure_password
-    validates :email, presence: true, uniqueness: true
-    
-    def self.add_users()
+    # def self.add_users()
        
-        us = User.find_by_sql(["select name from users where users.zipcode = '0000'"])
-        return [us[0]["name"]]
-        
-    end
+    #     us = User.find_by_sql(["select name from users where users.zipcode = '0000'"])
+    #     return [us[0]["name"]]
+    # end
 
     before_save { self.email = email.downcase }
 
