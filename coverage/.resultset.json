@@ -318,11 +318,11 @@
         ]
       }
     },
-    "timestamp": 1667430290
+    "timestamp": 1667432330
   },
   "Cucumber Features": {
     "coverage": {
-      "/root/esaas/HoMealy/features/support/selectors.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/features/support/selectors.rb": {
         "lines": [
           null,
           null,
@@ -337,10 +337,6 @@
           null,
           null,
           1,
-          0,
-          null,
-          null,
-          0,
           null,
           null,
           null,
@@ -358,7 +354,12 @@
           null,
           null,
           null,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -367,7 +368,7 @@
           null
         ]
       },
-      "/root/esaas/HoMealy/features/support/paths.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/features/support/paths.rb": {
         "lines": [
           null,
           null,
@@ -376,10 +377,10 @@
           null,
           1,
           1,
-          34,
+          35,
           6,
           11,
-          8,
+          9,
           3,
           1,
           3,
@@ -391,7 +392,7 @@
           1
         ]
       },
-      "/root/esaas/HoMealy/features/step_definitions/dish_steps.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/features/step_definitions/dish_steps.rb": {
         "lines": [
           null,
           1,
@@ -418,35 +419,23 @@
           null
         ]
       },
-      "/root/esaas/HoMealy/features/step_definitions/user_steps.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/features/step_definitions/user_steps.rb": {
         "lines": [
           null,
           1,
-          9,
-          9,
-          9,
+          10,
+          10,
+          10,
           null,
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          2,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          9,
-          9,
+          10,
+          10,
           null
         ]
       },
-      "/root/esaas/HoMealy/features/step_definitions/web_steps.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/features/step_definitions/web_steps.rb": {
         "lines": [
           null,
           null,
@@ -487,60 +476,38 @@
           null,
           null,
           1,
-          12,
-          null,
-          null,
-          1,
-          6,
-          null,
-          null,
-          1,
-          36,
-          null,
-          null,
-          1,
-          16,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          18,
-          18,
-          18,
-          null,
-          null
-        ]
-      },
-      "/root/esaas/HoMealy/app/models/dish.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/root/esaas/HoMealy/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/root/esaas/HoMealy/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
           13,
           null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          38,
+          null,
+          null,
+          1,
+          17,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          19,
+          19,
+          19,
+          null,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/dish.rb": {
+        "lines": [
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -549,14 +516,36 @@
           null
         ]
       },
-      "/root/esaas/HoMealy/app/controllers/sessions_controller.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/application_record.rb": {
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          12,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          8,
+          8,
           7,
           7,
-          6,
-          6,
           null,
           1,
           1,
@@ -564,20 +553,20 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/root/esaas/HoMealy/app/controllers/application_controller.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
-          92,
+          101,
           null,
           null,
           null,
@@ -586,23 +575,24 @@
           null
         ]
       },
-      "/root/esaas/HoMealy/app/helpers/application_helper.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/root/esaas/HoMealy/app/controllers/home_controller.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
-          11,
-          11,
+          12,
+          12,
+          12,
           null,
           null
         ]
       },
-      "/root/esaas/HoMealy/app/controllers/dishes_controller.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/dishes_controller.rb": {
         "lines": [
           1,
           1,
@@ -627,7 +617,7 @@
           null
         ]
       },
-      "/root/esaas/HoMealy/app/controllers/users_controller.rb": {
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -654,6 +644,6 @@
         ]
       }
     },
-    "timestamp": 1667430793
+    "timestamp": 1667432203
   }
 }
