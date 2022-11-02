@@ -17,3 +17,18 @@ body {
     background-image: url("wallpaper2.jpeg");
     background-size: cover
 }
+
+.fa {
+    color: white;
+    font-size: 30px;
+    float: right;
+}
+
+a {
+    float: right
+}
+
+#currentUser {
+    color: white;
+    float: left;
+}
