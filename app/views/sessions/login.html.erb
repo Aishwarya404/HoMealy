@@ -4,32 +4,35 @@
     <% end %>
 </head>
 <body>
-    <h1> This is LOG IN </h1>
     <div class = "container">
         <%= form_tag '/login' do %>
             <div class="row"> 
                 <div class="col-md-4"> 
-                    <%= f.label :EMAIL %>
+                    EMAIL
                 </div>
                 <div class="col-md-8"> 
-                    <%= f.text_field :email %>
+                    <%= text_field_tag :email %>
                 </div>
             </div>
             <br>
             <div class="row"> 
                 <div class="col-md-4"> 
-                    <%= f.label :PASSWORD %>
+                    PASSWORD
                 </div>
                 <div class="col-md-8"> 
-                    <%= f.password_field :password %>
+                    <%= password_field_tag :password %>
                 </div>
             </div>
             <br>
             <div class="row"> 
                 <div class="col-md-12"> 
-                    <%= f.submit " LOG IN " %>
+                    <%= submit_tag "LOG IN" %>
                 </div>
             </div>
+            <br>
+            <button type="button" class="btn btn-outline-secondary">
+                <a href="/home/index" > GO BACK </a>
+            </button>
         <% end %>
     </div>
 </body>
