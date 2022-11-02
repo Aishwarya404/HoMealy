@@ -10,7 +10,7 @@
         <br>
         <% @user_dish.each do |dish| %>
             <div class="dish"> 
-                <div class = dishtitle">
+                <div class="dishtitle">
                     <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
                 </div>
                 <div class="dishdetails">
@@ -18,7 +18,7 @@
                     Price : $<%= dish.price %><br>
                     Seller : <%= dish.name %><br>
                     Description : <%= dish.description %><br>
-                    Zipcode : <%= dish.zipcode %><br>
+                    Zipcode : <%= dish.zipcode %>
                 </div>
             </div>
         <% end %>
