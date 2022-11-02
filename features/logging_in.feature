@@ -9,28 +9,30 @@ Background: on the starting page, un-authenticated
   Given I am on the Home page
   And I have an account with email: "test@test.com" and password: "test"
   And I follow "LOG IN"
+  Then I should be on the Log In page
   And I fill in "email" with "test@test.com"
-
-#   And I am not authenticated
 
 Scenario: Signing in with correct credentials
 
   And I fill in "password" with "test"
   And I press "LOG IN"
-  Then I should see "Logged in as test"
+  Then I should be on the Main page
+  And I should see "Logged in as test"
+  
 
 Scenario: signing in with wrong credentials
 
   And I fill in "password" with "wrongpassword"
   And I press "LOG IN"
-  Then I should not see "Logged in as"
+  Then I should be on the Log In page
+  And I should not see "Logged in as"
 
 # Scenario: Logging out
 #   And I fill in "password" with "test"
 #   And I press "LOG IN"
 #   Then I should see "Logged in as test"
 #   And I follow "Log Out"
-#   Then I should see "Welcome to HoMealy"
+#   Then I should see "HoMealy"
 #   And I should not see "Logged in as"
 
 
