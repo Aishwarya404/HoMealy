@@ -21,13 +21,12 @@ Feature: Set of dishes are present in the DB
 
         Given I am on the Main page
         Then I should see "Today's dishes for you"
-        And I should see "Pav Bhaji"
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page
-        And I follow "ADD A DISH"
+        And I follow "ADD A NEW DISH"
         Then I should be on the Add Dish page
-        And I should see "Please enter information for your dish"
+        And I should see "Please enter following information for your dish"
 
     Scenario: User tries to see information of an existing dish
         Given I have a dish with dishname: "Test Dish" and user_email: "test@test.com"
