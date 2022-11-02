@@ -23,3 +23,9 @@ a {
 a:hover {
     color: lightgrey
 }
+
+.label {
+    color: black;
+    font-size: 16px;
+    float: left;
+}

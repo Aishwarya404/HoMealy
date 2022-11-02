@@ -1,9 +1,8 @@
 .container {
-    
     background-color: #e7f0f3;
     margin: auto;
     width: 50%;
-    margin-top: 200px;
+    margin-top: 70px;
     padding: 30px;
 }
 
@@ -23,10 +22,15 @@
     font-size: medium;
 }
 
-.button{
+button{
     margin: auto;
-    width: 50%;
-    
+    width: 100%;
+}
+
+a {
+    color: white;
+    font-weight: 400;
+    font-size: 16px
 }
 
 input {
