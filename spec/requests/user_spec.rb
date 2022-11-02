@@ -40,7 +40,7 @@ RSpec.describe "Users", type: :request do
       post '/login', params: { email: "bloop@example.com", password: "abcdef" }
       expect(response).to redirect_to(home_main_path)
     end
-
+    
     it "wrong password" do
       post '/login', params: { session: { email: "bloop@example.com", password: "xxxxxx" } }
       expect(response).to redirect_to(login_path)

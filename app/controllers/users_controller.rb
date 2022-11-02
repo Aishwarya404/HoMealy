@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
+        puts @user.errors
         if @user.save
             session[:email] = @user.email
-            redirect_to login_path
+            redirect_to home_main_path
+        else
+            render 'new'
         end
     end
 
@@ -14,6 +17,6 @@ class UsersController < ApplicationController
     private 
     
     def user_params
-        params.require(:user).permit(:email, :name, :password, :zipcode)
+        params.require(:user).permit(:email, :password, :name, :favorite_cuisine, :address, :zipcode)
     end
 end

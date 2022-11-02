@@ -14,4 +14,9 @@
     <%= f.label :DESCRIPTION %>
     <%= f.text_field :description %> <br>
     <%= f.submit "Upload Dish" %>
+    <ul>
+        <% @dish.errors.messages.each do |msg| %>
+            <li> <%= msg %></li>
+        <% end %>
+    </ul>
 <% end %>

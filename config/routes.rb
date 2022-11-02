@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  # Defines the root path route ("/")
-  root :to => "home#index"
+  root :to => 'home#index'
+  # root :to => "/home/main", constraints: lambda { @current_user }
 
   resources :users, only:[:new, :create]
   resources :dishes, only:[:new, :create]
   
-  get 'home/index', to: "home#index"
+  get 'home/index', to: "home#index" 
   post 'home/main'
   get 'home/main'
   
