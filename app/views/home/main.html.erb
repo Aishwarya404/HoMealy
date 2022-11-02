@@ -1,11 +1,19 @@
-<h1> Dishes for you </h1>
-<ul>
-    <% @dishes.each do |dish| %>
-        <li> 
-            <%= dish.dishname %>
-        </li>
+
+<head> 
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'main' %>
     <% end %>
-</ul>
-<button type="button" class="btn btn-outline-secondary">
-    <a href="/dishes/new" method="post"> ADD A DISH </a>
-</button>
+</head>
+<body>
+    <div class="container"> 
+        <h1> Today's dishes for you </h1>
+        <% @dishes.each do |dish| %>
+            <div> 
+                <%= dish.dishname %>
+            </div>
+        <% end %>
+        <button type="button" class="btn btn-outline-secondary">
+            <a href="/dishes/new" method="post"> ADD A DISH </a>
+        </button>
+    </div>
+</body>
