@@ -7,12 +7,22 @@
 <body>
     <div class="container"> 
         <h1> Today's dishes for you </h1>
-        <% @dishes.each do |dish| %>
-            <div> 
-                <%= dish.dishname %>
+        <br>
+        <% @user_dish.each do |dish| %>
+            <div class="dish"> 
+                <div class = dishtitle">
+                    <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                </div>
+                <div class="dishdetails">
+                    Cuisine : <%= dish.cuisine %><br>
+                    Price : $<%= dish.price %><br>
+                    Seller : <%= dish.name %><br>
+                    Description : <%= dish.description %><br>
+                    Zipcode : <%= dish.zipcode %><br>
+                </div>
             </div>
         <% end %>
-        <button type="button" class="btn btn-outline-secondary">
+        <button type="button" class="btn btn-secondary">
             <a href="/dishes/new" method="post"> ADD A DISH </a>
         </button>
     </div>
