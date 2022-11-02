@@ -27,13 +27,13 @@ Scenario: signing in with wrong credentials
   Then I should be on the Log In page
   And I should not see "Logged in as"
 
-# Scenario: Logging out
-#   And I fill in "password" with "test"
-#   And I press "LOG IN"
-#   Then I should see "Logged in as test"
-#   And I follow "Log Out"
-#   Then I should see "HoMealy"
-#   And I should not see "Logged in as"
+Scenario: Logging out
+  And I fill in "password" with "test"
+  And I press "LOG IN"
+  Then I should see "Logged in as test"
+  And I follow "logout"
+  Then I should see "HoMealy"
+  And I should not see "Logged in as"
 
 
 
