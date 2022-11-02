@@ -1,4 +1,4 @@
-.container {
+.container {  
     background-color: #e7f0f3;
     margin: auto;
     width: 50%;
@@ -14,7 +14,8 @@
 
 .dishtitle{
     font-family: "Georgia", Times, serif;
-    font-size: x-large;
+    font-size: larger;
+    
 }
 
 .dishdetails{
