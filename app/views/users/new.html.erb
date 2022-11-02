@@ -1,28 +1,79 @@
-
-<html>
-    <head> </head>
-    <body> 
-        <h1> This is SIGN UP </h1>
-
+<head>
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'signup' %>
+    <% end %>
+</head>
+<body>
+    <div class="container">
         <%= form_for @user do |f| %>
-            <%= f.label :EMAIL %>
-            <%= f.text_field :email %> <br>
-            <%= f.label :PASSWORD %>
-            <%= f.password_field :password %> <br>
-            <%= f.label :NAME %>
-            <%= f.text_field :name %> <br>
-            <%= f.label :"FAVORITE CUISINE" %>
-            <%= f.text_field :favorite_cuisine %> <br>
-            <%= f.label :ADDRESS %>
-            <%= f.text_field :address %> <br>
-            <%= f.label :ZIPCODE %>
-            <%= f.text_field :zipcode %> <br>
-            <%= f.submit "Create Account" %>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :EMAIL %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :email %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :PASSWORD %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.password_field :password %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :NAME %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :name %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :"FAVORITE CUISINE" %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :favorite_cuisine %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :ADDRESS %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :address %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :ZIPCODE %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :zipcode %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-12"> 
+                    <%= f.submit " CREATE ACCOUNT " %>
+                </div>
+            </div>
+            <br>
+            <button type="button" class="btn btn-outline-secondary">
+                <a href="/home/index" > GO BACK </a>
+            </button>
             <ul>
                 <% @user.errors.messages.each do |msg| %>
                     <li> <%= msg %></li>
                 <% end %>
             </ul>
         <% end %>
-    </body>
-</html>
+    </div>
+</body>

@@ -1,22 +1,79 @@
-<h1> This is TO ADD A NEW DISH </h1>
-
-<%= form_for @dish do |f| %>
-    <%= f.label :DISHNAME %>
-    <%= f.text_field :dishname %> <br>
-    <%= f.label :EMAIL %>
-    <%= f.text_field :user_email %> <br>
-    <%= f.label :PRICE %>
-    <%= f.text_field :price %> <br>
-    <%= f.label :CUISINE %>
-    <%= f.text_field :cuisine %> <br>
-    <%= f.label :QUANTITY %>
-    <%= f.text_field :quantity %> <br>
-    <%= f.label :DESCRIPTION %>
-    <%= f.text_field :description %> <br>
-    <%= f.submit "Upload Dish" %>
-    <ul>
-        <% @dish.errors.messages.each do |msg| %>
-            <li> <%= msg %></li>
+<head> 
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'adddish' %>
+    <% end %>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            Please enter information for your dish 
+        </div>
+        <br>
+        <%= form_for @dish do |f| %>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :DISHNAME %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :dishname %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :EMAIL %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :user_email %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :PRICE %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :price %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :CUISINE %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :cuisine %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :QUANTITY %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :quantity %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4"> 
+                    <%= f.label :DESCRIPTION %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :description %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12"> 
+                    <%= f.submit "Upload Dish" %>
+                </div>
+            </div>
+            <ul>
+                <% @dish.errors.messages.each do |msg| %>
+                    <li> <%= msg %></li>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
-<% end %>
+    </div>
+</body>

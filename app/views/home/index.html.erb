@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    </head>
-    <body>
-        <h1> Welcome to HoMealy !</h1>
-        <button type="button" class="btn btn-outline-secondary" id="signupbutton">
-            <a href="/users/new" id="signup"> SIGN UP </a>
-        </button>
-        <button type="button" class="btn btn-outline-secondary">
-            <a href="/login"> LOG IN </a>
-        </button>
-    </body>
-</html>
+<head>
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'index' %>
+    <% end %>
+</head>
+<body>
+    <div class="container">
+        <div class="title"> HoMealy </div>
+        <div class="subtitle"> Satiate your home cooked food cravings! </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5">
+                <button type="button" class="btn btn-outline-secondary" id="signupbutton">
+                    <a href="/users/new" id="signup"> SIGN UP </a>
+                </button>
+            </div>
+            <div class="col-md-6 col-sm-5">
+                <button type="button" class="btn btn-outline-secondary">
+                    <a href="/login" > LOG IN </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>

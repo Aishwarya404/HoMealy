@@ -1,9 +1,35 @@
-<h1> This is LOG IN </h1>
-
-<div>
-    <%= form_tag '/login' do %>
-        Email: <%= text_field_tag :email %> <br>
-        Password: <%= password_field_tag :password %> <br>
-        <%= submit_tag "LOG IN" %>
+<head>
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'login' %>
     <% end %>
-</div>
+</head>
+<body>
+    <h1> This is LOG IN </h1>
+    <div class = "container">
+        <%= form_tag '/login' do %>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :EMAIL %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.text_field :email %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <%= f.label :PASSWORD %>
+                </div>
+                <div class="col-md-8"> 
+                    <%= f.password_field :password %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-12"> 
+                    <%= f.submit " LOG IN " %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</body>

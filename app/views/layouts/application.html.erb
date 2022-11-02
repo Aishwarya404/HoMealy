@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MyApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+  	<head>
+		<title> MyApp </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" href="data:,">
+		
+		<!-- jquery -->
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<!-- ICON  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-  <body>
-    <% if current_user %>
-      <%= "Logged in as #{current_user.name}" %> | <%= link_to 'Home', home_main_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
-    <% end %>
-    <%= yield %>
-    <% if notice %>
-      <%= notice %>
-	  <% end %>
-	
-	  <% if alert %>
-      <%= alert %>
-	  <% end %>
-  </body>
+		<%= content_for :stylesheets if content_for?(:stylesheets) %>
+		<%= stylesheet_link_tag 'application' , media: 'all', 'data-turbolinks-track' => true%>
+  	</head>
+
+  	<body>
+		<% if current_user %>
+			<%= "Logged in as #{current_user.name}" %> | <%= link_to 'Home', home_main_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+		<% end %>
+		
+		<%= yield %>
+		
+		<% if notice %>
+			<%= notice %>
+		<% end %>
+		
+		<% if alert %>
+			<%= alert %>
+		<% end %>
+  	</body>
 </html>

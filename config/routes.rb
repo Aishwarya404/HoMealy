@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root :to => 'home#index'
-  # root :to => "/home/main", constraints: lambda { @current_user }
 
   resources :users, only:[:new, :create]
   resources :dishes, only:[:new, :create]
@@ -17,5 +16,4 @@ Rails.application.routes.draw do
 
   post 'dishes/new'
   get 'dishes/new'
-
 end
