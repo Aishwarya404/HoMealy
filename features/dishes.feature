@@ -15,7 +15,6 @@ Feature: Set of dishes are present in the DB
         And I press "LOG IN"
         Then I should be on the Main page
         And I should see "Today's dishes for you"
-        And 2 seed dishes should exist
 
     Scenario: User logs in and sees the available dishes
 
