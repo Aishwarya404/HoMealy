@@ -8,4 +8,5 @@ class User < ApplicationRecord
     validates :password_digest, presence: true, length: { minimum: 6, maximum: 100 }
     validates :name, presence: true, length: { maximum: 100 }
     validates :zipcode, presence: true, length: {maximum: 5}
+    validates :address, presence: true, length: { maximum: 100 }
 end
