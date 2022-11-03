@@ -12,12 +12,19 @@ RSpec.describe "Users", type: :request do
   # end
 
 
-  # describe "GET /main" do
-  #   it "returns http success" do
-  #     get "/home/main"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET /main" do
+    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027")
+    @user.save
+    it "correct password" do
+      post '/login', params: { email: "bloop@example.com", password: "abcdef" }
+      get "/home/main"
+      expect(response).to have_http_status(:success)
+    end
+    it "incorrect password" do
+      post '/login', params: { email: "bloop@example.com", password: "abcd" }
+      expect(response).to redirect_to(login_path)
+    end
+  end
   
   describe "GET /signup" do
     it "returns http success" do
