@@ -1,0 +1,38 @@
+<head>
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'login' %>
+    <% end %>
+</head>
+<body>
+    <div class = "container">
+        <%= form_tag '/login' do %>
+            <div class="row"> 
+                <div class="col-md-4 label"> 
+                    EMAIL
+                </div>
+                <div class="col-md-8"> 
+                    <%= text_field_tag :email %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-4 label"> 
+                    PASSWORD
+                </div>
+                <div class="col-md-8"> 
+                    <%= password_field_tag :password %>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-md-12"> 
+                    <%= submit_tag "LOG IN" %>
+                </div>
+            </div>
+            <br>
+            <button type="button" class="btn btn-secondary">
+                <a href="/home/index" > GO BACK </a>
+            </button>
+        <% end %>
+    </div>
+</body>

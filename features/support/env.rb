@@ -5,6 +5,9 @@
 # files.
 
 require 'cucumber/rails'
+require "rack_session_access/capybara"
+require 'simplecov'
+SimpleCov.start
 
 # frozen_string_literal: true
 
