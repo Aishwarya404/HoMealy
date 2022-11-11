@@ -33,11 +33,7 @@
           1,
           null,
           1,
-          14,
-          null,
-          null,
-          null,
-          null,
+          20,
           null,
           null
         ]
@@ -69,7 +65,6 @@
         "lines": [
           1,
           1,
-          2,
           2,
           2,
           1,
@@ -206,6 +201,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -251,10 +247,17 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -302,13 +305,13 @@
         "lines": [
           1,
           1,
+          5,
+          5,
           3,
           3,
-          2,
-          2,
           null,
-          1,
-          1,
+          2,
+          2,
           null,
           null,
           null,
@@ -318,9 +321,20 @@
           null,
           null
         ]
+      },
+      "/Users/aishwaryasivakumar/Desktop/FALL22/ESaaS/my_app/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1667433879
+    "timestamp": 1668207000
   },
   "Cucumber Features": {
     "coverage": {
