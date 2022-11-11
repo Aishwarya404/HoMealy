@@ -6,21 +6,59 @@
 </head>
 <body>
     <div class="container"> 
-        <h1> Today's dishes for you </h1>
-        <br>
-        <% @user_dish.each do |dish| %>
-            <div class="dish"> 
-                <div class="dishtitle">
-                    <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+        <% if @user_dish_zipcode.count > 0 %>
+            <h1> Today's dishes for based on zipcode</h1>
+            <br>
+            <% @user_dish_zipcode.each do |dish| %>
+                <div class="dish"> 
+                    <div class="dishtitle">
+                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                    </div>
+                    <div class="dishdetails">
+                        Cuisine : <%= dish.cuisine %><br>
+                        Price : $<%= dish.price %><br>
+                        Seller : <%= dish.name %><br>
+                        Description : <%= dish.description %><br>
+                        Zipcode : <%= dish.zipcode %>
+                    </div>
                 </div>
-                <div class="dishdetails">
-                    Cuisine : <%= dish.cuisine %><br>
-                    Price : $<%= dish.price %><br>
-                    Seller : <%= dish.name %><br>
-                    Description : <%= dish.description %><br>
-                    Zipcode : <%= dish.zipcode %>
+            <% end %>
+        <% end %>
+        <% if @user_dish_cuisine.count > 0 %>
+            <h1> Today's dishes for you based on favorite cuisine</h1>
+            <br>
+            <% @user_dish_cuisine.each do |dish| %>
+                <div class="dish"> 
+                    <div class="dishtitle">
+                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                    </div>
+                    <div class="dishdetails">
+                        Cuisine : <%= dish.cuisine %><br>
+                        Price : $<%= dish.price %><br>
+                        Seller : <%= dish.name %><br>
+                        Description : <%= dish.description %><br>
+                        Zipcode : <%= dish.zipcode %>
+                    </div>
                 </div>
-            </div>
+            <% end %>
+        <% end %>
+        <% if @user_dish.count > 0 %>
+            <h1> Today's dishes for you </h1>
+            <br>
+            <% @user_dish.each do |dish| %>
+                <div class="dish"> 
+                    <div class="dishtitle">
+                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                    </div>
+                    <div class="dishdetails">
+                        Cuisine : <%= dish.cuisine %><br>
+                        Price : $<%= dish.price %><br>
+                        Seller : <%= dish.name %><br>
+                        Description : <%= dish.description %><br>
+                        Zipcode : <%= dish.zipcode %>
+                    </div>
+                </div>
+            <% end %>
         <% end %>
         <button type="button" class="btn btn-secondary">
             <a href="/dishes/new" method="post"> ADD A NEW DISH </a>
