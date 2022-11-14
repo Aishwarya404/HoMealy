@@ -1,6 +1,6 @@
 
 def create_user(values)
-	default_values = {name: "test", email: "test@test.com", password: "pass", zipcode: 10028, address: "520 w 123"}
+	default_values = {name: "test", email: "test@test.com", password: "pass", zipcode: 10028, address: "520 w 123", phone: 917917917}
 	values = default_values.merge(values)
 	@test_user = User.new values
 end
