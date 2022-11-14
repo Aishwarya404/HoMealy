@@ -8,6 +8,19 @@
     <div class="container"> 
         <h1> Today's dishes for you </h1>
         <br>
+        <%= form_tag(home_main_path, method: :get) do %>
+            SEARCH BY SELLER <%= text_field_tag :seller, params[:seller] %>
+            SEARCH BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
+            CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
+            <%= submit_tag 'Search'%>
+        <% end %>
+        <br>
+        <% if @search_error %>
+            <div class="search_error">
+                <%= @search_error %>
+            </div>
+            <br>
+        <% end %>
         <% @user_dish.each do |dish| %>
             <div class="dish"> 
                 <div class="dishtitle">
