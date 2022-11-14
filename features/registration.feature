@@ -41,6 +41,7 @@ Feature: Gives the user the possibility to create an account to log in later
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
     And I should not see "Today's dishes for you"
+    And I should see "is invalid"
 
   Scenario: Create an account with Existing email (duplicate check)
 
@@ -57,10 +58,35 @@ Feature: Gives the user the possibility to create an account to log in later
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
     And I should not see "Today's dishes for you"
+    And I should see "has already been taken"
 
+  Scenario: Create an account with Invalid phone number
 
+    Then I should see "Satiate your home cooked food cravings!"
+    Given I follow "SIGN UP"
+    Given I have an account with email: "test@test.com" and password: "test" and address: "520 w 123"
 
+    Then I should be on the Sign Up page
+    Given I fill in "user_email" with "test@test.com"
+    And I fill in "user_name" with "test"
+    And I fill in "user_password" with "test"
+    And I fill in "user_zipcode" with "10027"
+    And I fill in "user_phone" with "abc"
+    And I press "CREATE ACCOUNT"
+    Then I should be on the Sign Up error page
+    And I should see "is not a number"
 
+  Scenario: Create an account with incomplete details
 
+    Then I should see "Satiate your home cooked food cravings!"
+    Given I follow "SIGN UP"
+    Given I have an account with email: "test@test.com" and password: "test" and address: "520 w 123"
 
-
+    Then I should be on the Sign Up page
+    Given I fill in "user_email" with "test@test.com"
+    And I fill in "user_name" with "test"
+    And I fill in "user_password" with "test"
+    And I fill in "user_phone" with "917340340"
+    And I press "CREATE ACCOUNT"
+    Then I should be on the Sign Up error page
+    And I should see "can't be blank" 
