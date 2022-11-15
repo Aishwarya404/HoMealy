@@ -5,63 +5,125 @@
     <% end %>
 </head>
 <body>
-    <div class="container"> 
-        <% if @user_dish_zipcode.count > 0 %>
-            <h1> Today's dishes for based on zipcode</h1>
-            <br>
-            <% @user_dish_zipcode.each do |dish| %>
-                <div class="dish"> 
-                    <div class="dishtitle">
-                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+    <div id = "box" class="container"> 
+            <div class="tab">
+                <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')">Zipcode</button>
+                <button class="tablinks" data-inline="true" onclick="openPage(event, 'cuisine')">Cuisine</button>
+                <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')">All</button>
+            </div>
+       
+        <div id="zipcode" class="tabcontent">
+            <% if @user_dish_zipcode.count > 0 %>
+                <h1> Today's dishes for based on zipcode</h1>
+                <br>
+                
+                <% @user_dish_zipcode.each do |dish| %>
+                    <div class="dish"> 
+                        <div class="dishtitle">
+                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                        </div>
+                        <div class="dishdetails">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    
+                                    Cuisine : <%= dish.cuisine %><br>
+                                    Price : $<%= dish.price %><br>
+                                    Seller : <%= dish.name %><br>
+                                    Description : <%= dish.description %><br>
+                                    Zipcode : <%= dish.zipcode %>
+                                </div>
+                                <div class="col-md-6 col-sm-12 buy_button">
+                                    <button class = "buy"> BUY
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dishdetails">
-                        Cuisine : <%= dish.cuisine %><br>
-                        Price : $<%= dish.price %><br>
-                        Seller : <%= dish.name %><br>
-                        Description : <%= dish.description %><br>
-                        Zipcode : <%= dish.zipcode %>
-                    </div>
-                </div>
+                <% end %>
             <% end %>
-        <% end %>
-        <% if @user_dish_cuisine.count > 0 %>
-            <h1> Today's dishes for you based on favorite cuisine</h1>
-            <br>
-            <% @user_dish_cuisine.each do |dish| %>
-                <div class="dish"> 
-                    <div class="dishtitle">
-                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+        </div>
+
+        <div id="all" class="tabcontent">
+            <% if @user_dish.count > 0 %>
+                <h1> Today's dishes for you </h1>
+                <br>
+                <% @user_dish.each do |dish| %>
+                    <div class="dish"> 
+                        <div class="dishtitle">
+                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                        </div>
+                        <div class="dishdetails">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    Cuisine : <%= dish.cuisine %><br>
+                                    Price : $<%= dish.price %><br>
+                                    Seller : <%= dish.name %><br>
+                                    Description : <%= dish.description %><br>
+                                    Zipcode : <%= dish.zipcode %>
+                                </div>
+                                <div class="col-md-6 col-sm-12 buy_button">
+                                    <button class = "buy"> BUY
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dishdetails">
-                        Cuisine : <%= dish.cuisine %><br>
-                        Price : $<%= dish.price %><br>
-                        Seller : <%= dish.name %><br>
-                        Description : <%= dish.description %><br>
-                        Zipcode : <%= dish.zipcode %>
-                    </div>
-                </div>
+                <% end %>
             <% end %>
-        <% end %>
-        <% if @user_dish.count > 0 %>
-            <h1> Today's dishes for you </h1>
-            <br>
-            <% @user_dish.each do |dish| %>
-                <div class="dish"> 
-                    <div class="dishtitle">
-                        <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+        </div>
+
+        <div id="cuisine" class="tabcontent">
+            <% if @user_dish_cuisine.count > 0 %>
+                <h1> Today's dishes for you based on favorite cuisine</h1>
+                <br>
+                <% @user_dish_cuisine.each do |dish| %>
+                    <div class="dish"> 
+                        <div class="dishtitle">
+                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                        </div>
+                        <div class="dishdetails">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    Cuisine : <%= dish.cuisine %><br>
+                                    Price : $<%= dish.price %><br>
+                                    Seller : <%= dish.name %><br>
+                                    Description : <%= dish.description %><br>
+                                    Zipcode : <%= dish.zipcode %>
+                                </div>
+                                <div class="col-md-6 col-sm-12 buy_button">
+                                    <button class = "buy"> BUY
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dishdetails">
-                        Cuisine : <%= dish.cuisine %><br>
-                        Price : $<%= dish.price %><br>
-                        Seller : <%= dish.name %><br>
-                        Description : <%= dish.description %><br>
-                        Zipcode : <%= dish.zipcode %>
-                    </div>
-                </div>
+                <% end %>
             <% end %>
-        <% end %>
+        </div>
+    
+        <script>
+        function openPage(evt, category) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            console.log(tabcontent);
+            for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            let content = document.getElementById(category)
+            console.log(content)
+            content.style.display = "block";
+            
+            box.append(content)
+        }
+        </script>     
+        <div id = "box" class="container"> 
         <button type="button" class="btn btn-secondary">
             <a href="/dishes/new" method="post"> ADD A NEW DISH </a>
         </button>
+        </div>
     </div>
 </body>
