@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     end
 
     def new
+        return redirect_to home_main_path if !@current_user.nil?
         @user = User.new
     end
 

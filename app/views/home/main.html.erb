@@ -6,14 +6,32 @@
 </head>
 <body>
     <div class="container"> 
-        <h1> Today's dishes for you </h1>
-        <br>
-        <%= form_tag(home_main_path, method: :get) do %>
-            SEARCH BY SELLER <%= text_field_tag :seller, params[:seller] %>
-            SEARCH BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
-            CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
-            <%= submit_tag 'Search'%>
+        <%= form_tag(home_main_path, method: :get, id: "search") do %>
+            <div class="row">
+                <div class= "col-md-6">
+                    FILTER BY SELLER <%= text_field_tag :seller, params[:seller] %>
+                </div>
+                <div class="col-md-6">
+                    FILTER BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class= "col-md-6">
+                    FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
+                </div>
+                <div class= "col-md-6">
+                    FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: "All")%>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= submit_tag 'Show search results'%>
+                </div>
+            </div>
         <% end %>
+        <h3> Dishes for you ! </h3>
         <br>
         <% if @search_error %>
             <div class="search_error">
