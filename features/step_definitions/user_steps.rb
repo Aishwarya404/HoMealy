@@ -5,12 +5,6 @@ def create_user(values)
 	@test_user = User.new values
 end
 
-
-# Given /^I have an account with email: "(.*)" and password: "(.*)"$/ do |email, password|
-# 	@test_user =  create_user({email: email, password: password})
-# 	@test_user.save!
-# end
-
 Given /^I have an account with email: "(.*)", name: "(.*)" and password: "(.*)"$/ do |email, name, password|
 	@test_user =  create_user({email: email, password: password, name: name})
 	@test_user.save!

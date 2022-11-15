@@ -14,12 +14,12 @@ Feature: Set of dishes are present in the DB
         And I fill in "password" with "test"
         And I press "LOG IN"
         Then I should be on the Main page
-        And I should see "Today's dishes for you"
+        And I should see "Dishes for you"
 
     Scenario: User logs in and sees the available dishes
 
         Given I am on the Main page
-        Then I should see "Today's dishes for you"
+        Then I should see "Dishes for you"
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page
@@ -50,7 +50,7 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_cuisine" with "Thai"
         And I press "Upload Dish"
         Then I should be on the Add Dish error page
-        And I should not see "Today's dishes for you"
+        And I should not see "Dishes for you"
         And I should see "can't be blank"
     
     Scenario: User tries to fill in incorrect price/quantity for a new dish
@@ -61,7 +61,7 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_quantity" with "abc"
         And I press "Upload Dish"
         Then I should be on the Add Dish error page
-        And I should not see "Today's dishes for you"
+        And I should not see "Dishes for you"
         And I should see "is not a number"
 
     Scenario: Email pre-populated when user tries to list new dish

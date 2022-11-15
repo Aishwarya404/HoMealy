@@ -24,7 +24,7 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_phone" with "917917917"
     And I press "CREATE ACCOUNT"
     Then I should be on the Main page
-    And I should see "Today's dishes for you"
+    And I should see "Dishes for you"
 
   Scenario: Create an account with Invalid email
 
@@ -40,7 +40,7 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_phone" with "917340340"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
-    And I should not see "Today's dishes for you"
+    And I should not see "Dishes for you"
     And I should see "is invalid"
 
   Scenario: Create an account with Existing email (duplicate check)
@@ -57,7 +57,7 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_phone" with "917340340"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
-    And I should not see "Today's dishes for you"
+    And I should not see "Dishes for you"
     And I should see "has already been taken"
 
   Scenario: Create an account with Invalid phone number

@@ -12,14 +12,14 @@ Feature: Set of dishes are present in the DB
         And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and user_email: "bruce@test.com"
         And I have a dish with dishname: "Sample Dish" and cuisine: "Chinese" and user_email: "tony@test.com"
         Then I should be on the Main page
-        And I should see "Today's dishes for you"
+        And I should see "Dishes for you"
 
     Scenario: User searches with seller's name
 
         Given I am on the Main page
-        And I should see "SEARCH BY SELLER"
+        And I should see "FILTER BY SELLER"
         And I fill in "seller" with "tony"
-        And I press "Search"
+        And I press "Show search results"
         And I should see "Test Dish"
         And I should see "Sample Dish"
         And I should not see "Random Dish"
@@ -27,18 +27,18 @@ Feature: Set of dishes are present in the DB
     Scenario: User searches with dish name
 
         Given I am on the Main page
-        And I should see "SEARCH BY DISHNAME"
+        And I should see "FILTER BY DISHNAME"
         And I fill in "dishname" with "Sample Dish"
-        And I press "Search"
+        And I press "Show search results"
         And I should see "Sample Dish"
         And I should not see "Random Dish"
 
     Scenario: User filters with cuisine
 
         Given I am on the Main page
-        And I should see "SEARCH BY DISHNAME"
+        And I should see "FILTER BY DISHNAME"
         And I select "Thai" from "cuisine"
-        And I press "Search"
+        And I press "Show search results"
         Then I should see "Test Dish"
         And I should not see "Sample Dish"
         And I should not see "Random Dish"
@@ -46,10 +46,10 @@ Feature: Set of dishes are present in the DB
     Scenario: User filters with cuisine and seller
 
         Given I am on the Main page
-        And I should see "SEARCH BY DISHNAME"
+        And I should see "FILTER BY DISHNAME"
         And I select "Chinese" from "cuisine"
         And I fill in "seller" with "tony"
-        And I press "Search"
+        And I press "Show search results"
         Then I should see "Sample Dish"
         And I should not see "Test Dish"
         And I should not see "Random Dish"
