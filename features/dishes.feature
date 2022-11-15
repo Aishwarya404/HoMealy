@@ -28,7 +28,7 @@ Feature: Set of dishes are present in the DB
         And I should see "Please enter following information for your dish"
 
     Scenario: User tries to see information of an existing dish
-        Given I have a dish with dishname: "Test Dish" and cuisine: "Thai" and user_email: "sample@test.com"
+        Given I have a dish with dishname: "Test Dish" and cuisine: "Thai" and price: "20" and user_email: "sample@test.com"
         And I am on the Main page
         Then I should see "Test Dish"
 

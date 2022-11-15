@@ -8,9 +8,10 @@ Feature: Set of dishes are present in the DB
         And I fill in "email" with "tony@test.com"
         And I fill in "password" with "test"
         And I press "LOG IN"
-        And I have a dish with dishname: "Test Dish" and cuisine: "Thai" and user_email: "tony@test.com"
-        And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and user_email: "bruce@test.com"
-        And I have a dish with dishname: "Sample Dish" and cuisine: "Chinese" and user_email: "tony@test.com"
+        And I have a dish with dishname: "Test Dish" and cuisine: "Thai" and price: "19" and user_email: "tony@test.com"
+        And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and price: "25" and user_email: "bruce@test.com"
+        And I have a dish with dishname: "Sample Dish" and cuisine: "Chinese" and price: "14" and user_email: "tony@test.com"
+        And I have a dish with dishname: "Cheap Dish" and cuisine: "Thai" and price: "10" and user_email: "tony@test.com"
         Then I should be on the Main page
         And I should see "Dishes for you"
 
@@ -54,4 +55,13 @@ Feature: Set of dishes are present in the DB
         And I should not see "Test Dish"
         And I should not see "Random Dish"
     
+    Scenario: User filters with price
+
+        Given I am on the Main page
+        And I should see "FILTER BY PRICE"
+        And I select "$10 - $15" from "price"
+        And I press "Show search results"
+        Then I should see "Cheap Dish"
+        And I should see "Sample Dish"
+        And I should not see "Test Dish"
 
