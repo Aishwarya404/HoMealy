@@ -35,7 +35,6 @@ Feature: Set of dishes are present in the DB
     Scenario: User tries to fill in details for a new dish
         Given I am on the Add Dish page
         And I fill in "dish_dishname" with "Pad Thai"
-        And I fill in "dish_user_email" with "test@test.com"
         And I fill in "dish_price" with "20"
         And I fill in "dish_quantity" with "5"
         And I fill in "dish_cuisine" with "Thai"
@@ -46,9 +45,7 @@ Feature: Set of dishes are present in the DB
     Scenario: User tries to fill in incorrect details for a new dish
         Given I am on the Add Dish page
         And I fill in "dish_dishname" with "Pad Thai"
-        And I fill in "dish_user_email" with "test"
         And I fill in "dish_price" with "20"
-        And I fill in "dish_quantity" with "5"
         And I fill in "dish_cuisine" with "Thai"
         And I press "Upload Dish"
         Then I should be on the Add Dish error page
