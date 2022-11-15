@@ -30,7 +30,7 @@ Feature: Gives the user the possibility to create an account to log in later
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com" and password: "test" and address: "520 w 123"
+    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test"
@@ -46,7 +46,7 @@ Feature: Gives the user the possibility to create an account to log in later
   Scenario: Create an account with Existing email (duplicate check)
 
     Then I should see "Satiate your home cooked food cravings!"
-    Given I have an account with email: "test@test.com" and password: "test"
+    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
     Given I follow "SIGN UP"
 
     Then I should be on the Sign Up page
@@ -64,7 +64,7 @@ Feature: Gives the user the possibility to create an account to log in later
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com" and password: "test" and address: "520 w 123"
+    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test@test.com"
@@ -80,7 +80,7 @@ Feature: Gives the user the possibility to create an account to log in later
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com" and password: "test" and address: "520 w 123"
+    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test@test.com"
