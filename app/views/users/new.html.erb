@@ -14,6 +14,18 @@
                     <%= f.text_field :email %>
                 </div>
             </div>
+            <% if @user.errors.messages[:email] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:email].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
             <br>
             <div class="row"> 
                 <div class="col-md-3"> 
@@ -23,6 +35,18 @@
                     <%= f.password_field :password %>
                 </div>
             </div>
+            <% if @user.errors.messages[:password] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:password].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
             <br>
             <div class="row"> 
                 <div class="col-md-3"> 
@@ -32,6 +56,39 @@
                     <%= f.text_field :name %>
                 </div>
             </div>
+            <% if @user.errors.messages[:name] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:name].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
+            <br>
+            <div class="row"> 
+                <div class="col-md-3"> 
+                    <%= f.label :PHONE %>
+                </div>
+                <div class="col-md-9"> 
+                    <%= f.text_field :phone %>
+                </div>
+            </div>
+            <% if @user.errors.messages[:phone] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:phone].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
             <br>
             <div class="row"> 
                 <div class="col-md-3"> 
@@ -50,6 +107,18 @@
                     <%= f.text_field :address %>
                 </div>
             </div>
+            <% if @user.errors.messages[:address] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:address].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
             <br>
             <div class="row"> 
                 <div class="col-md-3"> 
@@ -59,6 +128,18 @@
                     <%= f.text_field :zipcode %>
                 </div>
             </div>
+            <% if @user.errors.messages[:zipcode] %>
+                <div class="row"> 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9"> 
+                        <ul>
+                            <% @user.errors.messages[:zipcode].each do |msg| %>
+                                <li> <%= msg %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
             <br>
             <div class="row"> 
                 <div class="col-md-12"> 
@@ -69,11 +150,6 @@
             <button type="button" class="btn btn-secondary">
                 <a href="/home/index" > GO BACK </a>
             </button>
-            <ul>
-                <% @user.errors.messages.each do |msg| %>
-                    <li> <%= msg %></li>
-                <% end %>
-            </ul>
         <% end %>
     </div>
 </body>

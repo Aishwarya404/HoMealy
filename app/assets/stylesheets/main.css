@@ -1,8 +1,13 @@
+body {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
 .container {  
     background-color: #e7f0f3;
     margin: auto;
     width: 60%;
-    padding: 20px;
+    padding: 50px;
 }
 
 .dish{
@@ -87,4 +92,14 @@ input {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+select {
+    width: 100%;
+}
+
+#search {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: white;
 }
