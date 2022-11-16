@@ -3,17 +3,18 @@ Feature: Set of dishes are present in the DB
 
     Background: dishes, users have been added to database
 
-        Given I have an account with email: "tony@test.com", name: "tony" and password: "test"
-        And I am on the Log In page
-        And I fill in "email" with "tony@test.com"
-        And I fill in "password" with "test"
-        And I press "LOG IN"
-        And I have a dish with dishname: "Test Dish" and cuisine: "Thai" and price: "19" and user_email: "tony@test.com"
+        Given I have an account with email: "tony@test.com", name: "tony", zipcode: "10029" and password: "test"
+        And I have an account with email: "bruce@test.com", name: "bruce", zipcode: "10028" and password: "test"
+        And I have an account with email: "buyer@test.com", name: "Buyer", zipcode: "10030" and password: "test"
+        And I have a dish with dishname: "Test Dish" and cuisine: "American" and price: "19" and user_email: "tony@test.com"
         And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and price: "25" and user_email: "bruce@test.com"
         And I have a dish with dishname: "Sample Dish" and cuisine: "Chinese" and price: "14" and user_email: "tony@test.com"
-        And I have a dish with dishname: "Cheap Dish" and cuisine: "Thai" and price: "10" and user_email: "tony@test.com"
+        And I have a dish with dishname: "Cheap Dish" and cuisine: "Mexican" and price: "10" and user_email: "tony@test.com"
+        And I am on the Log In page
+        And I fill in "email" with "buyer@test.com"
+        And I fill in "password" with "test"
+        And I press "LOG IN"
         Then I should be on the Main page
-        And I should see "Dishes for you"
 
     Scenario: User searches with seller's name
 
@@ -38,7 +39,7 @@ Feature: Set of dishes are present in the DB
 
         Given I am on the Main page
         And I should see "FILTER BY DISHNAME"
-        And I select "Thai" from "cuisine"
+        And I select "American" from "cuisine"
         And I press "Show search results"
         Then I should see "Test Dish"
         And I should not see "Sample Dish"

@@ -8,18 +8,12 @@ Feature: Set of dishes are present in the DB
         | Pav Bhaji  | sai@gmail.com  | 20    | 20       | Indian  | With butter and chana |
         | Fried Rice | aish@gmail.com | 15    | 10       | Chinese | With sauces           |
 
-        And I have an account with email: "sample@test.com", name: "tony" and password: "test"
+        And I have an account with email: "sample@test.com", name: "tony", zipcode: "10029" and password: "test"
         And I am on the Log In page
         And I fill in "email" with "sample@test.com"
         And I fill in "password" with "test"
         And I press "LOG IN"
         Then I should be on the Main page
-        And I should see "Dishes for you"
-
-    Scenario: User logs in and sees the available dishes
-
-        Given I am on the Main page
-        Then I should see "Dishes for you"
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page

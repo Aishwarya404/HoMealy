@@ -17,7 +17,7 @@
         </div>
         <% if @user_dish_zipcode.count > 0 %>
             <div id="zipcode" class="tabcontent">
-                <h1> Today's dishes for based on zipcode</h1>
+                <h1> Dishes for you based on zipcode</h1>
                 <br>
                 <% @user_dish_zipcode.each do |dish| %>
                     <div class="dish"> 
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 <% end %>
-                <h1> Today's dishes for you </h1>
+                <h1> Dishes for you </h1>
                 <br>
                 <% @user_dish.each do |dish| %>
                     <div class="dish"> 
@@ -145,7 +145,7 @@
 
         <div id="fav_cuisine" class="tabcontent">
             <% if @user_dish_cuisine.count > 0 %>
-                <h1> Today's dishes for you based on favorite cuisine</h1>
+                <h1> Dishes for you based on favorite cuisine</h1>
                 <br>
                 <% @user_dish_cuisine.each do |dish| %>
                     <div class="dish"> 

@@ -21,23 +21,22 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_password" with "test"
     And I fill in "user_zipcode" with "10027"
     And I fill in "user_address" with "520 w 123"
-    And I fill in "user_phone" with "917917917"
+    And I fill in "user_phone" with "9179179171"
     And I press "CREATE ACCOUNT"
     Then I should be on the Main page
-    And I should see "Dishes for you"
 
   Scenario: Create an account with Invalid email
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
+    Given I have an account with email: "test@test.com", name: "tony", zipcode: "10029" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test"
     And I fill in "user_name" with "test"
     And I fill in "user_password" with "test"
     And I fill in "user_zipcode" with "10027"
-    And I fill in "user_phone" with "917340340"
+    And I fill in "user_phone" with "9173403401"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
     And I should not see "Dishes for you"
@@ -46,7 +45,7 @@ Feature: Gives the user the possibility to create an account to log in later
   Scenario: Create an account with Existing email (duplicate check)
 
     Then I should see "Satiate your home cooked food cravings!"
-    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
+    Given I have an account with email: "test@test.com", name: "tony", zipcode: "10029" and password: "test"
     Given I follow "SIGN UP"
 
     Then I should be on the Sign Up page
@@ -54,7 +53,7 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_name" with "test"
     And I fill in "user_password" with "test"
     And I fill in "user_zipcode" with "10027"
-    And I fill in "user_phone" with "917340340"
+    And I fill in "user_phone" with "9173403401"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
     And I should not see "Dishes for you"
@@ -64,7 +63,7 @@ Feature: Gives the user the possibility to create an account to log in later
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
+    Given I have an account with email: "test@test.com", name: "tony", zipcode: "10029" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test@test.com"
@@ -74,19 +73,19 @@ Feature: Gives the user the possibility to create an account to log in later
     And I fill in "user_phone" with "abc"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
-    And I should see "is not a number"
+    And I should see "is invalid"
 
   Scenario: Create an account with incomplete details
 
     Then I should see "Satiate your home cooked food cravings!"
     Given I follow "SIGN UP"
-    Given I have an account with email: "test@test.com", name: "tony" and password: "test"
+    Given I have an account with email: "test@test.com", name: "tony", zipcode: "10029" and password: "test"
 
     Then I should be on the Sign Up page
     Given I fill in "user_email" with "test@test.com"
     And I fill in "user_name" with "test"
     And I fill in "user_password" with "test"
-    And I fill in "user_phone" with "917340340"
+    And I fill in "user_phone" with "9173403401"
     And I press "CREATE ACCOUNT"
     Then I should be on the Sign Up error page
     And I should see "can't be blank" 
