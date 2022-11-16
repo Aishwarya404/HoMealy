@@ -5,24 +5,54 @@ SimpleCov.start
 RSpec.describe "Users", type: :request do
 
   describe "POST /login" do
-    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027", phone: "6462881247", address: "3153 Broadway")
+    @user = User.new(name: "User", email: "bloop2@example.com", password: "abcdef", zipcode: "10027", phone: "6462881247", address: "3153 Broadway")
     @user.save
-    it "correct password" do
-      post '/login', params: { email: "bloop@example.com", password: "abcdef" }
-      expect(response).to redirect_to(home_main_path)
 
+    @dish = Dish.new(dishname: "Test dish", user_email: "bloop2@example.com", price: 20, quantity: 5, cuisine: "Indian")
+    @dish.save
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      expect(response).to redirect_to(home_main_path)
+    end 
+
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
       get "/home/main"
       expect(response).to have_http_status(:success)
+    end
 
-      get "/home/main?seller=Sairam&dishname=Pav+bhaji&cuisine=Indian&price=10%2C+15&commit=Show+search+results"
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      get "/home/main?seller=User&commit=Show+search+results"
       expect(response).to have_http_status(:success)
+    end
 
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      get "/home/main?seller=User&dishname=Test+Dish&commit=Show+search+results"
+      expect(response).to have_http_status(:success)
+    end
+
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      get "/home/main?seller=User&dishname=Test+Dish&cuisine=Indian&commit=Show+search+results"
+      expect(response).to have_http_status(:success)
+    end
+
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      get "/home/main?seller=User&dishname=Test+Dish&cuisine=Indian&price=15%2C+20&commit=Show+search+results"
+      expect(response).to have_http_status(:success)
+    end
+
+    it "correct password" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
       get '/home/index'
       expect(response).to redirect_to(home_main_path)
     end
 
     it "incorrect password" do
-      post '/login', params: { email: "bloop@example.com", password: "abcd" }
+      post '/login', params: { email: "bloop2@example.com", password: "abcd" }
       expect(response).to redirect_to(login_path)
     end
   end

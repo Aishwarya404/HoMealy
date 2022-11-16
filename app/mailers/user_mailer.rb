@@ -23,6 +23,6 @@ class UserMailer < ApplicationMailer
         @seller = params[:seller]
         @seller_email = params[:seller_email]
         @user = params[:user]
-        mail(to:@seller_email, subject: 'Your buyer is on the way!')
+        mail(to: @seller_email, subject: 'Your buyer is on the way!')
     end
 end

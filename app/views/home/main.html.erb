@@ -7,17 +7,14 @@
 <body>
     <div id = "box" class="container"> 
         <div class="tab">
-            <% if @user_dish_zipcode.count > 0 %>
-                <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')">Zipcode</button>
-            <% end %>
-            <% if @user_dish_cuisine.count > 0 %>
-                <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')">Cuisine</button>
-            <% end %>
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')">Zipcode</button>
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')">Cuisine</button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">ALL</button>
         </div>
-        <% if @user_dish_zipcode.count > 0 %>
-            <div id="zipcode" class="tabcontent">
-                <h1> Today's dishes for based on zipcode</h1>
+        
+        <div id="zipcode" class="tabcontent">
+            <% if @user_dish_zipcode.count > 0 %>
+                <h1> Today's dishes for you near <%= @current_user.zipcode %> </h1>
                 <br>
                 <% @user_dish_zipcode.each do |dish| %>
                     <div class="dish"> 
@@ -42,7 +39,7 @@
                                 <%= form_tag(home_buy_path, method: :put) do %>
                                     <div class="row">
                                         <div class= "col-md-6">
-                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                            <%= select_tag :quantity, options_for_select(1..dish.quantity)%>
                                         </div>
                                         <div class= "col-md-6">
                                             <%= submit_tag 'PLACE ORDER'%>
@@ -64,8 +61,15 @@
                         </div>
                     </div>
                 <% end %>
-            </div>
-        <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="col-md-12">
+                        No items found near <%= @current_user.zipcode %>!
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        
 
         <div id="all" class="tabcontent">
             <% if @user_dish.count > 0 %>
@@ -90,7 +94,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <%= submit_tag 'Show search results'%>
+                            <%= submit_tag 'Fine Dishes'%>
                         </div>
                     </div>
                 <% end %>
@@ -118,7 +122,7 @@
                                 <%= form_tag(home_buy_path, method: :put) do %>
                                     <div class="row">
                                         <div class= "col-md-6">
-                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                            <%= select_tag :quantity, options_for_select(1..dish.quantity)%>
                                         </div>
                                         <div class= "col-md-6">
                                             <%= submit_tag 'PLACE ORDER'%>
@@ -140,12 +144,19 @@
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="col-md-12">
+                        No items found!
+                    </div>
+                </div>
             <% end %>
         </div>
+        
 
         <div id="fav_cuisine" class="tabcontent">
             <% if @user_dish_cuisine.count > 0 %>
-                <h1> Today's dishes for you based on favorite cuisine</h1>
+                <h1> Today's <%= @current_user.favorite_cuisine %> dishes for you </h1>
                 <br>
                 <% @user_dish_cuisine.each do |dish| %>
                     <div class="dish"> 
@@ -169,7 +180,7 @@
                                 <%= form_tag(home_buy_path, method: :put) do %>
                                     <div class="row">
                                         <div class= "col-md-6">
-                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                            <%= select_tag :quantity, options_for_select(1..dish.quantity)%>
                                         </div>
                                         <div class= "col-md-6">
                                             <%= submit_tag 'PLACE ORDER'%>
@@ -191,51 +202,58 @@
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="col-md-12">
+                        No items found for <%= @current_user.favorite_cuisine %> cuisine!
+                    </div>
+                </div>
             <% end %>
         </div>
+        
     
         <script>
-        function openPage(evt, category) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            console.log(tabcontent);
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+            function openPage(evt, category) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                console.log(tabcontent);
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                let content = document.getElementById(category)
+                console.log(content)
+                content.style.display = "block";
+                evt.currentTarget.className += " active";
+
+                buy_blocks = document.getElementsByClassName("buy_block")
+                for (i = 0; i < buy_blocks.length; i++) {
+                    buy_blocks[i].style.display = "none";
+                }
             }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+            $(document).ready(function () {
+                document.getElementById("all_button").click(); 
+            });
+
+            function showBuyBlock(dish_id) {
+                var x = document.getElementById(dish_id);
+                x.style.display = "block";
             }
-            let content = document.getElementById(category)
-            console.log(content)
-            content.style.display = "block";
-            evt.currentTarget.className += " active";
 
-            buy_blocks = document.getElementsByClassName("buy_block")
-            for (i = 0; i < buy_blocks.length; i++) {
-                buy_blocks[i].style.display = "none";
+            function hideBuyBlock(dish_id) {
+                var x = document.getElementById(dish_id);
+                x.style.display = "none";
             }
-        }
-
-        $(document).ready(function () {
-            document.getElementById("all_button").click(); 
-        });
-
-        function showBuyBlock(dish_id) {
-            var x = document.getElementById(dish_id);
-            x.style.display = "block";
-        }
-
-        function hideBuyBlock(dish_id) {
-            var x = document.getElementById(dish_id);
-            x.style.display = "none";
-        }
         </script>  
 
         <div id = "box" class="container"> 
-        <button type="button" class="btn btn-secondary">
-            <a href="/dishes/new" method="post"> ADD A NEW DISH </a>
-        </button>
+            <button type="button" class="btn btn-secondary">
+                <a href="/dishes/new" method="post"> ADD A NEW DISH </a>
+            </button>
         </div>
     </div>
 </body>
