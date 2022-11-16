@@ -14,7 +14,7 @@
         
         <div id="zipcode" class="tabcontent">
             <% if @user_dish_zipcode.count > 0 %>
-                <h1> Today's dishes for you near <%= @current_user.zipcode %> </h1>
+                <h3> Today's dishes for you near <%= @current_user.zipcode %> </h3>
                 <br>
                 <% @user_dish_zipcode.each do |dish| %>
                     <div class="dish"> 
@@ -64,7 +64,7 @@
             <% else %>
                 <div class="row">
                     <div class="col-md-12">
-                        No items found near <%= @current_user.zipcode %>!
+                        <h3> No items found near <%= @current_user.zipcode %>! </h3>
                     </div>
                 </div>
             <% end %>
@@ -72,33 +72,33 @@
         
 
         <div id="all" class="tabcontent">
+            <%= form_tag(home_main_path, method: :get, id: "search") do %>
+                <div class="row">
+                    <div class= "col-md-6">
+                        FILTER BY SELLER <%= text_field_tag :seller, params[:seller] %>
+                    </div>
+                    <div class="col-md-6">
+                        FILTER BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class= "col-md-6">
+                        FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
+                    </div>
+                    <div class= "col-md-6">
+                        FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: "All")%>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <%= submit_tag 'Find Dishes'%>
+                    </div>
+                </div>
+            <% end %>
             <% if @user_dish.count > 0 %>
-                <%= form_tag(home_main_path, method: :get, id: "search") do %>
-                    <div class="row">
-                        <div class= "col-md-6">
-                            FILTER BY SELLER <%= text_field_tag :seller, params[:seller] %>
-                        </div>
-                        <div class="col-md-6">
-                            FILTER BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class= "col-md-6">
-                            FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
-                        </div>
-                        <div class= "col-md-6">
-                            FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: "All")%>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <%= submit_tag 'Fine Dishes'%>
-                        </div>
-                    </div>
-                <% end %>
-                <h1> Today's dishes for you </h1>
+                <h3> Today's dishes for you </h3>
                 <br>
                 <% @user_dish.each do |dish| %>
                     <div class="dish"> 
@@ -147,7 +147,7 @@
             <% else %>
                 <div class="row">
                     <div class="col-md-12">
-                        No items found!
+                        <h3> No items found! </h3>
                     </div>
                 </div>
             <% end %>
@@ -156,7 +156,7 @@
 
         <div id="fav_cuisine" class="tabcontent">
             <% if @user_dish_cuisine.count > 0 %>
-                <h1> Today's <%= @current_user.favorite_cuisine %> dishes for you </h1>
+                <h3> Today's <%= @current_user.favorite_cuisine %> dishes for you </h3>
                 <br>
                 <% @user_dish_cuisine.each do |dish| %>
                     <div class="dish"> 
@@ -205,7 +205,7 @@
             <% else %>
                 <div class="row">
                     <div class="col-md-12">
-                        No items found for <%= @current_user.favorite_cuisine %> cuisine!
+                        <h3> No items found for <%= @current_user.favorite_cuisine %> cuisine! </h3>
                     </div>
                 </div>
             <% end %>
@@ -248,8 +248,8 @@
                 var x = document.getElementById(dish_id);
                 x.style.display = "none";
             }
-        </script>  
-
+        </script> 
+        
         <div id = "box" class="container"> 
             <button type="button" class="btn btn-secondary">
                 <a href="/dishes/new" method="post"> ADD A NEW DISH </a>

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
-  describe "notify" do
+  describe "welcome email" do
     # let(:mail) { UserMailer.buyer_confirmation_email }
 
     # it "renders the headers" do
