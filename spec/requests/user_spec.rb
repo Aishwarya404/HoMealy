@@ -5,7 +5,7 @@ SimpleCov.start
 RSpec.describe "Users", type: :request do
 
   describe "POST /login" do
-    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027", phone: 6462881247, address: "3153 Broadway")
+    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027", phone: "6462881247", address: "3153 Broadway")
     @user.save
     it "correct password" do
       post '/login', params: { email: "bloop@example.com", password: "abcdef" }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_11_212056) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_004657) do
   create_table "dishes", force: :cascade do |t|
     t.string "dishname"
     t.string "user_email"
@@ -21,12 +21,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_212056) do
   end
 
   create_table "users", primary_key: "email", id: :string, force: :cascade do |t|
-    t.string "password_digest"
     t.string "name"
+    t.string "password_digest"
     t.string "zipcode"
     t.string "favorite_cuisine"
     t.string "address"
-    t.integer "phone"
+    t.string "phone"
   end
 
 end
