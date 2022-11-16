@@ -20,8 +20,8 @@ end
 
 
 users = [
-    {"email": "sai@gmail.com", "password": "ram", "name": "sairam", "favorite_cuisine": "Thai", "address": "3153 Broadway, Apt 5", "zipcode": "10027"},
-    {"email": "aish@gmail.com", "password": "warya", "name": "aishwarya", "favorite_cuisine": "Indian", "address": "520 W, 123rd street", "zipcode": "10027"},
+    {"email": "sai@gmail.com", "password": "ram", "phone": 9173409876, "name": "sairam", "favorite_cuisine": "Thai", "address": "3153 Broadway, Apt 5", "zipcode": "10027"},
+    {"email": "aish@gmail.com", "password": "warya", "phone": 6462881247, "name": "aishwarya", "favorite_cuisine": "Indian", "address": "520 W, 123rd street", "zipcode": "10027"},
 ]
 
 users.each do |user|

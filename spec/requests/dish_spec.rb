@@ -9,7 +9,7 @@ RSpec.describe "Dishes", type: :request do
       expect(response).to redirect_to(login_path)
     end
 
-    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027")
+    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027", address: "3153 Broadway")
     @user.save
     it "correct password" do
       post '/login', params: { email: "bloop@example.com", password: "abcdef" }
