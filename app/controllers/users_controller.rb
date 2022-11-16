@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            UserMailer.with(user: @user).welcome_email.deliver_now
             session[:email] = @user.email
             redirect_to home_main_path
         else

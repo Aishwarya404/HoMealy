@@ -6,7 +6,7 @@ RSpec.describe UsersController do
 	describe "create user" do
     it "should create" do
       expect {
-        post :create, params: { user: { name: "User", email: "othr@example.com", phone: 123456789, password: "abcdef", zipcode: "10027", address: "3153 Braodway, NY" } }
+        post :create, params: { user: { name: "User", email: "othr@example.com", phone: "123456789", password: "abcdef", zipcode: "10027", address: "3153 Braodway, NY" } }
       }.to change{User.count}.by(1)
     end
 
