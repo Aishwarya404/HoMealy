@@ -3,7 +3,12 @@ Feature: Set of dishes are present in the DB
 
     Background: dishes have been added to database
 
-        Given I have an account with email: "sample@test.com", name: "tony", zipcode: "10029" and password: "test"
+         Given the following dishes exist:
+        | dishname   | user_email     | price | quantity | cuisine | description           |
+        | Pav Bhaji  | sai@gmail.com  | 20    | 20       | Indian  | With butter and chana |
+        | Fried Rice | aish@gmail.com | 15    | 10       | Chinese | With sauces           |
+        
+        And I have an account with email: "sample@test.com", name: "tony", zipcode: "10029" and password: "test"
         And I have an account with email: "bruce@test.com", name: "bruce", zipcode: "10028" and password: "test"
         And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and price: "25" and user_email: "bruce@test.com"
         And I am on the Log In page
