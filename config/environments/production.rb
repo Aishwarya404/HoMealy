@@ -105,6 +105,4 @@ Rails.application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.exceptions_app = self.routes
 end
