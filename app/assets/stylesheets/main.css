@@ -19,7 +19,7 @@ body {
 
 .dishtitle{
     font-family: "Georgia", Times, serif;
-    font-size: larger;
+    font-size: 20px;
 }
 
 .dishdetails{
@@ -29,6 +29,16 @@ body {
 
 .buy_button{
     text-align: center;
+    font-family: "Georgia", Times, serif;
+}
+
+.no_items{
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: "Georgia", Times, serif;
+    text-align: center;
+    margin:0 auto;
+    color: #ccc;
 }
 
 button{
@@ -39,6 +49,7 @@ button{
 .buy{
     width: 30% !important;
     margin: auto;
+    border: 20px;
     text-align: center;
     background-color: grey;
 }
@@ -73,7 +84,7 @@ input {
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-    width: 33.33% !important; 
+    width: 33.33% !important;
 }
 
 /* Change background color of buttons on hover */
