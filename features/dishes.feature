@@ -3,17 +3,15 @@ Feature: Set of dishes are present in the DB
 
     Background: dishes have been added to database
 
-        Given the following dishes exist:
-        | dishname   | user_email     | price | quantity | cuisine | description           |
-        | Pav Bhaji  | sai@gmail.com  | 20    | 20       | Indian  | With butter and chana |
-        | Fried Rice | aish@gmail.com | 15    | 10       | Chinese | With sauces           |
-
-        And I have an account with email: "sample@test.com", name: "tony", zipcode: "10029" and password: "test"
+        Given I have an account with email: "sample@test.com", name: "tony", zipcode: "10029" and password: "test"
+        And I have an account with email: "bruce@test.com", name: "bruce", zipcode: "10028" and password: "test"
+        And I have a dish with dishname: "Random Dish" and cuisine: "Indian" and price: "25" and user_email: "bruce@test.com"
         And I am on the Log In page
         And I fill in "email" with "sample@test.com"
         And I fill in "password" with "test"
         And I press "LOG IN"
         Then I should be on the Main page
+        And I should see "Logged in as tony"
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page
@@ -22,9 +20,8 @@ Feature: Set of dishes are present in the DB
         And I should see "Please enter following information for your dish"
 
     Scenario: User tries to see information of an existing dish
-        Given I have a dish with dishname: "Test Dish" and cuisine: "Thai" and price: "20" and user_email: "sample@test.com"
         And I am on the Main page
-        Then I should see "Test Dish"
+        Then I should see "Random Dish"
 
     Scenario: User tries to fill in details for a new dish
         Given I am on the Add Dish page
@@ -34,8 +31,7 @@ Feature: Set of dishes are present in the DB
         And I select "Thai" from "dish_cuisine"
         And I press "Upload Dish"
         Then I should be on the Main page
-        And I should see "Pad Thai"
-        And I should see "Only 5 servings left!"
+        And I should not see "Pad Thai"
 
     Scenario: User tries to fill in incorrect details for a new dish
         Given I am on the Add Dish page
