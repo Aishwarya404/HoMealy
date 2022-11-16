@@ -13,6 +13,9 @@ class DishesController < ApplicationController
         @dish = Dish.new
     end
 
+    def update
+    end
+
     private 
     
     def dish_params

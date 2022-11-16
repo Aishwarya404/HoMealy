@@ -38,4 +38,21 @@ class HomeController < ApplicationController
     def index 
       	return redirect_to home_main_path if !@current_user.nil?
     end
+
+	def buy
+		UserMailer.with(user: @current_user, quantity: params[:quantity], dishname: params[:dishname], seller: params[:name], seller_address: params[:address], seller_zipcode: params[:zipcode], seller_phone: params[:phone]).buyer_confirmation_email.deliver_now
+		UserMailer.with(user: @current_user, quantity: params[:quantity], dishname: params[:dishname], seller: params[:name], seller_email: params[:email]).seller_confirmation_email.deliver_now
+		
+		dish = Dish.find_by(dishname: params[:dishname], user_email: params[:email])
+		
+		dish.quantity = dish.quantity - params[:quantity].to_i
+
+		if dish.quantity == 0
+			Dish.destroy_by(dishname: params[:dishname], user_email: params[:email])
+		else
+			dish.save
+		end
+		
+		return redirect_to home_main_path
+	end
 end

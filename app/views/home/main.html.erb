@@ -1,9 +1,9 @@
-
 <head> 
     <% content_for :stylesheets do %>
         <%= stylesheet_link_tag 'main' %>
     <% end %>
 </head>
+
 <body>
     <div id = "box" class="container"> 
         <div class="tab">
@@ -37,9 +37,29 @@
                                     <button class="<%= dish.dishname %>" onclick="showBuyBlock('zipcode <%= dish.dishname %>')"> BUY </button>
                                 </div>
                             </div>
+                            <br>
                             <div class="row buy_block" id="zipcode <%= dish.dishname %>">
-                                <div class="col-md-6"> <button class = "buy"> PLACE ORDER </button> </div>
-                                <div class="col-md-6"> <button class = "buy" onclick="hideBuyBlock('zipcode <%= dish.dishname %>')"> CANCEL ORDER </button> </div>
+                                <%= form_tag(home_buy_path, method: :put) do %>
+                                    <div class="row">
+                                        <div class= "col-md-6">
+                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                        </div>
+                                        <div class= "col-md-6">
+                                            <%= submit_tag 'PLACE ORDER'%>
+                                        </div>
+                                        <%= hidden_field_tag :dishname, dish.dishname %>
+                                        <%= hidden_field_tag :name, dish.name %>
+                                        <%= hidden_field_tag :email, dish.email %>
+                                        <%= hidden_field_tag :address, dish.address %>
+                                        <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                        <%= hidden_field_tag :phone, dish.phone %>
+                                    </div>
+                                <% end %>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class = "buy" onclick="hideBuyBlock('zipcode <%= dish.dishname %>')"> CANCEL ORDER </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -95,8 +115,27 @@
                                 </div>
                             </div>
                             <div class="row buy_block" id="all <%= dish.dishname %>">
-                                <div class="col-md-6"> <button class = "buy"> PLACE ORDER </button> </div>
-                                <div class="col-md-6"> <button class = "buy" onclick="hideBuyBlock('all <%= dish.dishname %>')"> CANCEL ORDER </button> </div>
+                                <%= form_tag(home_buy_path, method: :put) do %>
+                                    <div class="row">
+                                        <div class= "col-md-6">
+                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                        </div>
+                                        <div class= "col-md-6">
+                                            <%= submit_tag 'PLACE ORDER'%>
+                                        </div>
+                                        <%= hidden_field_tag :dishname, dish.dishname %>
+                                        <%= hidden_field_tag :name, dish.name %>
+                                        <%= hidden_field_tag :email, dish.email %>
+                                        <%= hidden_field_tag :address, dish.address %>
+                                        <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                        <%= hidden_field_tag :phone, dish.phone %>
+                                    </div>
+                                <% end %>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class = "buy" onclick="hideBuyBlock('all <%= dish.dishname %>')"> CANCEL ORDER </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,8 +166,27 @@
                                 </div>
                             </div>
                             <div class="row buy_block" id="cuisine <%= dish.dishname %>">
-                                <div class="col-md-6"> <button class = "buy"> PLACE ORDER </button> </div>
-                                <div class="col-md-6"> <button class = "buy" onclick="hideBuyBlock('cuisine <%= dish.dishname %>')"> CANCEL ORDER </button> </div>
+                                <%= form_tag(home_buy_path, method: :put) do %>
+                                    <div class="row">
+                                        <div class= "col-md-6">
+                                            <%= select_tag :quantity, options_for_select([[1, 1], [2, 2], [3, 3]])%>
+                                        </div>
+                                        <div class= "col-md-6">
+                                            <%= submit_tag 'PLACE ORDER'%>
+                                        </div>
+                                        <%= hidden_field_tag :dishname, dish.dishname %>
+                                        <%= hidden_field_tag :name, dish.name %>
+                                        <%= hidden_field_tag :email, dish.email %>
+                                        <%= hidden_field_tag :address, dish.address %>
+                                        <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                        <%= hidden_field_tag :phone, dish.phone %>
+                                    </div>
+                                <% end %>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class = "buy" onclick="hideBuyBlock('cuisine <%= dish.dishname %>')"> CANCEL ORDER </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,8 +230,8 @@
             var x = document.getElementById(dish_id);
             x.style.display = "none";
         }
+        </script>  
 
-        </script>     
         <div id = "box" class="container"> 
         <button type="button" class="btn btn-secondary">
             <a href="/dishes/new" method="post"> ADD A NEW DISH </a>

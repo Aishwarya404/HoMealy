@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   resources :users, only:[:new, :create]
-  resources :dishes, only:[:new, :create]
+  resources :dishes, only:[:new, :create, :update]
   
   get 'home/index', to: "home#index" 
   post 'home/main'
+  put 'home/buy'
   get 'home/main'
   
   post 'users/new'
