@@ -65,4 +65,3 @@ Feature: Set of dishes are present in the DB
         Then I should see "Cheap Dish"
         And I should see "Sample Dish"
         And I should not see "Test Dish"
-
