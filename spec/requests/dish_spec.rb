@@ -4,6 +4,8 @@ SimpleCov.start
 
 RSpec.describe "Dishes", type: :request do
   describe "GET /dishes/new" do
+    User.destroy_by(email: "bloop1@example.com")
+
     it "redirect to login if not logged in" do
       get "/dishes/new"
       expect(response).to redirect_to(login_path)
