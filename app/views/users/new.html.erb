@@ -95,7 +95,7 @@
                     <%= f.label :"FAVORITE CUISINE" %>
                 </div>
                 <div class="col-md-9"> 
-                    <%= f.text_field :favorite_cuisine %>
+                    <%= f.select :favorite_cuisine, ["American", "Chinese", "French", "Italian", "Indian", "Mexican", "Thai", "Other"] %>
                 </div>
             </div>
             <br>
