@@ -31,7 +31,7 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_dishname" with "Pad Thai"
         And I fill in "dish_price" with "20"
         And I fill in "dish_quantity" with "5"
-        And I fill in "dish_cuisine" with "Thai"
+        And I select "Thai" from "dish_cuisine"
         And I press "Upload Dish"
         Then I should be on the Main page
         And I should see "Pad Thai"
@@ -41,7 +41,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Add Dish page
         And I fill in "dish_dishname" with "Pad Thai"
         And I fill in "dish_price" with "20"
-        And I fill in "dish_cuisine" with "Thai"
+        And I select "Thai" from "dish_cuisine"
         And I press "Upload Dish"
         Then I should be on the Add Dish error page
         And I should not see "Dishes for you"
@@ -51,7 +51,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Add Dish page
         And I fill in "dish_dishname" with "Pad Thai"
         And I fill in "dish_price" with "20"
-        And I fill in "dish_cuisine" with "Thai"
+        And I select "Thai" from "dish_cuisine"
         And I fill in "dish_quantity" with "abc"
         And I press "Upload Dish"
         Then I should be on the Add Dish error page
