@@ -5,10 +5,13 @@ SimpleCov.start
 RSpec.describe "Users", type: :request do
 
   describe "POST /login" do
+    User.destroy_by(email: "bloo2p@example.com")
+    Dish.destroy_by(user_email: "bloop2@example.com", dishname: "Test Dish")
+
     @user = User.new(name: "User", email: "bloop2@example.com", password: "abcdef", address: "3153 Broadway", zipcode: "10027", phone: "6462881247")
     @user.save
 
-    @dish = Dish.new(dishname: "Test dish", user_email: "bloop2@example.com", price: 20, quantity: 5, cuisine: "Indian")
+    @dish = Dish.new(dishname: "Test Dish", user_email: "bloop2@example.com", price: 20, quantity: 5, cuisine: "Indian")
     @dish.save
     it "correct password" do
       post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
