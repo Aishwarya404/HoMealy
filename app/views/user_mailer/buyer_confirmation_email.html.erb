@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h2> Thank you, <%= @user.name %> for ordering through HoMealy. </h2>
+        <h3> Your order for <%= @quantity %> <%= @dishname %> is now confirmed. </h3>
+        <h3> Collect your dishes from <%= @seller %> at <%= @seller_address %> <%= @seller_zipcode %>. </h3>
+        <h3> Mobile : <%= @seller_phone %> </h3>
+    </body>
+</html>
