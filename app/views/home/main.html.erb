@@ -11,15 +11,14 @@
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')">Cuisine</button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">ALL</button>
         </div>
-        
-        <div id="zipcode" class="tabcontent">
+    <div id="zipcode" class="tabcontent">
             <% if @user_dish_zipcode.count > 0 %>
                 <h3> Today's dishes for you near <%= @current_user.zipcode %> </h3>
                 <br>
                 <% @user_dish_zipcode.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> ( Only <%= dish.quantity %> servings left! )
                         </div>
                         <div class="dishdetails">
                             <div class="row">
@@ -103,7 +102,7 @@
                 <% @user_dish.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> ( Only <%= dish.quantity %> servings left! )
                         </div>
                         <div class="dishdetails">
                             <div class="row">
@@ -161,7 +160,7 @@
                 <% @user_dish_cuisine.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> ( Only <%= dish.quantity %> servings left! )
                         </div>
                         <div class="dishdetails">
                             <div class="row">
