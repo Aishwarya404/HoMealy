@@ -21,8 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_004657) do
   end
 
   create_table "users", primary_key: "email", id: :string, force: :cascade do |t|
-    t.string "name"
     t.string "password_digest"
+    t.string "name"
     t.string "zipcode"
     t.string "favorite_cuisine"
     t.string "address"

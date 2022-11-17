@@ -9,8 +9,9 @@ Dish.destroy_all
 User.destroy_all
 
 dishes = [
-    {"dishname": "Fried Rice", "user_email": "aish@gmail.com", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "World's best fried rice!"},
-    {"dishname": "Pav Bhaji", "user_email": "sai@gmail.com", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "World's best Paaaav!"}
+    {"dishname": "Fried Rice", "user_email": "as6418@columbia.edu", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "Fried rice with 2 eggs, sauteed in sliced garlic, carrots, onions, capsicum and more."},
+    {"dishname": "Pav Bhaji", "user_email": "sh4188@columbia.edu", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "Pav Bhaji that melts in your mouth, served with mashed vegeatables topped with butter!"},
+    {"dishname": "Chicken Biryani", "user_email": "sh4188@columbia.edu", "price": 8.5, "quantity": 8, "cuisine": "Indian", "description": "Chicken Biryani woohoo!"}
 ]
 
 dishes.each do |dish|
@@ -20,8 +21,8 @@ end
 
 
 users = [
-    {"email": "sai@gmail.com", "password": "ram", "phone": "9173409876", "name": "sairam", "favorite_cuisine": "Thai", "address": "3153 Broadway, Apt 5", "zipcode": "10027"},
-    {"email": "aish@gmail.com", "password": "warya", "phone": "6462881247", "name": "aishwarya", "favorite_cuisine": "Indian", "address": "520 W, 123rd street", "zipcode": "10027"},
+    {"email": "sh4188@columbia.edu", "password": "abcdef", "phone": "9173409876", "name": "Sairam", "favorite_cuisine": "Thai", "address": "3153 Broadway, Apt 5", "zipcode": "10027"},
+    {"email": "as6418@columbia.edu", "password": "abcdef", "phone": "6462881247", "name": "Aishwarya", "favorite_cuisine": "Indian", "address": "520 W, 123rd street", "zipcode": "10027"},
 ]
 
 users.each do |user|
