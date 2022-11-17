@@ -20,7 +20,7 @@ Feature: Set of dishes are present in the DB
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page
-        And I follow "ADD A NEW DISH"
+        And I follow "SELL A DISH"
         Then I should be on the Add Dish page
         And I should see "Please enter following information for your dish"
 
@@ -61,6 +61,6 @@ Feature: Set of dishes are present in the DB
 
     Scenario: Email pre-populated when user tries to list new dish
         Given I am on the Main page
-        And I follow "ADD A NEW DISH"
+        And I follow "SELL A DISH"
         Then I should be on the Add Dish page
         And I should see "tony"

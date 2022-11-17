@@ -19,7 +19,7 @@ Feature: Set of dishes are present in the DB
     Scenario: User clicks on zipcode tab
 
         Given I am on the Main page
-        And I press "Zipcode"
+        And I press "NEAR YOU"
         Then I should see "Random Dish"
         And I should see "Today's dishes for you near 10028"
         And I should not see "No items found"
@@ -27,7 +27,7 @@ Feature: Set of dishes are present in the DB
     Scenario: User clicks on cuisine tab
 
         Given I am on the Main page
-        And I press "Cuisine"
+        And I press "FAVORITE CUISINE"
         Then I should see "Cheap Dish"
         And I should see "Today's Thai dishes for you"
         And I should not see "No items found"

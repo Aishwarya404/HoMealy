@@ -34,7 +34,7 @@ Feature: Set of dishes are present in the DB
         And I should see "Only 5 servings left!"
         And I press "BUY"
         And I select "3" from "quantity"
-        And I press "CANCEL ORDER"
+        And I press "CANCEL"
         Then I should see "Only 5 servings left!"
 
     Scenario: User orders all available quantities
