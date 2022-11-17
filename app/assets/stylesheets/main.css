@@ -7,19 +7,20 @@ body {
     background-color: #e7f0f3;
     margin: auto;
     width: 60%;
-    padding: 50px;
-    padding-bottom: 0;
+    padding: 30px;
+    padding-bottom: 20px;
 }
 
 .dish{
     background-color: #ffffff;
-    padding: 30px;
-    margin-bottom: 20px;
+    padding: 25px;
+    margin-bottom: 15px;
 }
 
 .dishtitle{
     font-family: "Georgia", Times, serif;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .dishdetails{
@@ -42,16 +43,14 @@ body {
 }
 
 button{
-    margin: auto;
     width: 100%;
 }
 
 .buy{
-    width: 30% !important;
-    margin: auto;
-    border: 20px;
+    width: 70% !important;
+    border: 1px solid gray;
     text-align: center;
-    background-color: grey;
+    background-color: lightgray;
 }
 
 a {
@@ -82,7 +81,6 @@ input {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
     font-size: 17px;
     width: 33.33% !important;
 }
@@ -111,5 +109,6 @@ select {
 #search {
     padding: 20px;
     margin-bottom: 30px;
+    margin-top: 10px;
     background-color: white;
 }
