@@ -21,7 +21,8 @@ a {
 }
 
 a:hover {
-    color: lightgrey
+    color: lightgrey;
+    text-decoration: none;
 }
 
 .label {
