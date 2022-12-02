@@ -52,6 +52,13 @@
 				</div>
 				<div class="navbar-collapse collapse w-10">
 					<ul class="navbar-nav">
+						<%= link_to home_profile_path, id: "profile", method: :get do %>
+							<i class='fa fa-user'></i>
+						<% end %>
+					</ul>
+				</div>
+				<div class="navbar-collapse collapse w-10">
+					<ul class="navbar-nav">
 						<%= link_to logout_path, id: "logout", method: :get do %>
 							<i class="fa fa-sign-out"> </i>
 						<% end %>

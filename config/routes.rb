@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'home/main'
   put 'home/buy'
   get 'home/main'
+  get 'home/profile'
   
   post 'users/new'
   get 'login', to: "sessions#login"
