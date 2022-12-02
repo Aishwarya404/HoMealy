@@ -10,6 +10,7 @@
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')"> NEAR YOU</button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')"> FAVORITE CUISINE</button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">ALL DISHES</button>
+            
         </div>
         <div id="zipcode" class="tabcontent">
             <% if @user_dish_zipcode.count > 0 %>
