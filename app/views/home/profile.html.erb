@@ -1,0 +1,44 @@
+<head> 
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'main' %>
+    <% end %>
+</head>
+<body>
+    <div class = "container">
+        <div class="dishdetails">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="dishtitle">
+                        <b><%= @user_details[0].name %><br></b>
+                    </div>
+                    <b>CONTACT INFORMATION <br><br></b>
+                    Email : <%= @user_details[0].email %><br>
+                    Number : <%= @user_details[0].phone %><br>
+                    Adresss : <%= @user_details[0].address %>, <%= @user_details[0].zipcode %><br>
+                         
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <% if @sold_dishes.count > 0 %>
+                        <b><br>SOLD DISHES </b><br>
+                        <% @sold_dishes.each do |dish| %>
+                            Name : <%= dish.dishname %><br>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <% if @unsold_dishes.count > 0 %>
+                        <b><br> CURRENTLY SELLING DISHES</b> <br><br>
+                        <% @unsold_dishes.each do |dish| %>
+                            <%= dish.dishname %> <br>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
