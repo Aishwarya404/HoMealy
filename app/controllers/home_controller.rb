@@ -56,6 +56,6 @@ class HomeController < ApplicationController
 	def profile
 		@user_details = User.find_by_sql(["SELECT * from users where email = ?", @current_user.email])
 		@sold_dishes = User.find_by_sql(["SELECT * from dishes where user_email = ? and quantity = 0", @current_user.email])
-		@unsold_dishes = User.find_by_sql(["SELECT * from dishes where user_email = ?", @current_user.email])
+		@unsold_dishes = User.find_by_sql(["SELECT * from dishes where user_email = ? and quantity > 0", @current_user.email])
 	end
 end

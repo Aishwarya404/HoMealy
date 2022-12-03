@@ -8,21 +8,22 @@
         <div class="dishdetails">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    Name : <%= @user_details[0].name %><br>
+                    <div class="dishtitle">
+                        <b><%= @user_details[0].name %><br></b>
+                    </div>
+                    <b>CONTACT INFORMATION <br><br></b>
                     Email : <%= @user_details[0].email %><br>
-                    Contact number : <%= @user_details[0].phone %><br>
-                    Favorite Cuisine : <%= @user_details[0].favorite_cuisine %><br>
-                    Adresss : <%= @user_details[0].address %><br>
-                    Zipcode : <%= @user_details[0].zipcode %>
+                    Number : <%= @user_details[0].phone %><br>
+                    Adresss : <%= @user_details[0].address %>, <%= @user_details[0].zipcode %><br>
                          
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <% if @sold_dishes.count > 0 %>
-                        <h3> Sold Dishes </h3><br>
+                        <b><br>SOLD DISHES </b><br>
                         <% @sold_dishes.each do |dish| %>
-                            Name : <%= dish.dishname %>
+                            Name : <%= dish.dishname %><br>
                         <% end %>
                     <% end %>
                 </div>
@@ -30,9 +31,9 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <% if @unsold_dishes.count > 0 %>
-                        <h3> Currently Selling Dishes </h3><br>
+                        <b><br> CURRENTLY SELLING DISHES</b> <br><br>
                         <% @unsold_dishes.each do |dish| %>
-                            Name : <%= dish.dishname %> <br>
+                            <%= dish.dishname %> <br>
                         <% end %>
                     <% end %>
                 </div>
