@@ -29,7 +29,7 @@ class HomeController < ApplicationController
 			price_key = params[:price].split(", ").map(&:to_i)
 		end
 
-		@user_dish = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?", @current_user.email, dishname_key, seller_key, cuisine_key, price_key[0], price_key[1]])
+		@user_dish = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?", @current_user.email, '%'+dishname_key+'%', '%'+seller_key+'%', cuisine_key, price_key[0], price_key[1]])
     end
 
     def index 
