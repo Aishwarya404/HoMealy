@@ -4,7 +4,8 @@ body {
 }
 
 .container {  
-    background-color: rgba(253, 248, 245, 0.5);
+    /* background-color: rgba(253, 248, 245, 0.5); */
+    background-color: rgba(255, 255, 255, 0.7);
     margin: auto;
     width: 75%;
     padding: 0;
@@ -16,15 +17,22 @@ body {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    border: 1px solid;
+    border: 1px solid green;
     padding: 20px;
     border-radius: 100%;
-    background-color: #255150;
+    /* background-color: #255150; */
+    background-color: green;
+}
+
+#dishButton:hover {
+    background-color: rgb(0, 180, 0);
 }
 
 .dish{
-    background-color: #FDF8F5;
-    padding: 20px;
+    /* background-color: #FDF8F5; */
+    background-color: white;
+    padding: 25px;
+    border: 2px solid lightgray;
     margin-bottom: 25px;
 }
 
@@ -54,14 +62,20 @@ body {
 
 .buyButton{
     width: 60%;
-    border: 1px solid #4F4846;
+    /* border: 1px solid #4F4846; */
+    border: 1px solid black;
     border-radius: 10px;
-    background-color: #4F4846;
-    color: white
+    /* background-color: #4F4846; */
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
 .buyButton:hover {
-    color: #ddaf94
+    /* color: #ddaf94 */
+    /* background-color: darkgray;
+    border: 1px solid darkgray; */
+    color: darkgray
 }
 
 .buy{
@@ -78,12 +92,14 @@ body {
 }
 
 .confirm {
-    background-color: #255150;
+    /* background-color: #255150; */
+    background-color: green;
     color: white
 }
 
 .confirm:hover {
-    border: 2px solid #255150
+    /* border: 2px solid #255150 */
+    background-color: rgb(0, 180, 0);
 }
 
 .buy_block {
@@ -97,7 +113,8 @@ a {
 }
 
 a:hover {
-    color: #ddaf94;
+    /* color: #ddaf94; */
+    color: white;
     text-decoration: none;
 }
 
@@ -107,7 +124,8 @@ input {
 
 .tab {
     overflow: hidden;
-    background-color: #FDF8F5;
+    /* background-color: #FDF8F5; */
+    background-color: white;
 }
 
 /* Style the buttons inside the tab */
@@ -119,7 +137,7 @@ input {
     cursor: pointer;
     padding: 14px 16px;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 300;
     /* font-family: URW Chancery L, cursive; */
     width: 33.33% !important;
     height: 60px;
@@ -127,12 +145,16 @@ input {
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    background-color: #e8cebf;
+    /* background-color: #e8cebf; */
+    background-color: lightgray;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ddaf94;
+    /* background-color: #ddaf94; */
+    background-color: darkgrey;
+    color: black;
+    font-weight: 500;
 }
 
 /* Style the tab content */
@@ -149,10 +171,10 @@ select {
 }
 
 #search {
-    /* padding: 20px; */
     margin-bottom: 40px;
     margin-top: 10px;
-    /* background-color: #FDF8F5; */
+    /* background-color: #FDF8F5;
+    padding: 10px */
 }
 
 .label {
@@ -162,11 +184,17 @@ select {
 }
 
 .find {
-    background-color:#FDF8F5;
-    color: #4F4846;
-    border: 1px solid #FDF8F5
+    /* background-color:#FDF8F5; */
+    /* color: #4F4846; */
+    /* border: 1px solid #FDF8F5 */
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    font-weight: 600;
 }
 
 .find:hover {
-    color: #ddaf94
+    /* color: #ddaf94 */
+    background-color: lightgray;
+    border: 1px solid lightgray
 }

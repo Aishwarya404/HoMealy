@@ -30,3 +30,13 @@ a:hover {
     font-size: 16px;
     float: left;
 }
+
+input[type=submit] {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    font-weight: 500;
+}
+
+input[type=submit]:hover {
+    color: gray;
+}

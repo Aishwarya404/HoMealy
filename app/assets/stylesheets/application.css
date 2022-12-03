@@ -14,22 +14,26 @@
  */
 
 body {
-    background-image: url("wallpaper5.jpeg");
+    /* background-image: url("wallpaper5.jpeg"); */
+    background-image: url("wallpaper2.jpeg");
     /* background-size: cover; */
 }
 
 .fa {
-    color: #4F4846;
+    /* color: #4F4846; */
+    color: gray;
     font-size: 30px;
     float: right;
 }
 
 .fa:hover {
-    color: #e8cebf
+    /* color: #e8cebf */
+    color: lightgrey
 }
 
 .currentUser {
-    color:#4F4846 !important;
+    /* color:#4F4846 !important; */
+    color: white !important;
     font-size: 18px;
     font-weight: 600;
 }
@@ -42,7 +46,8 @@ body {
 }
 
 .navbar-custom {
-    background-color: #ddaf94 !important;
+    /* background-color: #ddaf94 !important; */
+    background-color: black !important;
 }
 
 .logo {
