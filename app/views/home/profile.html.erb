@@ -4,40 +4,68 @@
     <% end %>
 </head>
 <body>
-    <div class = "container">
+    <div class = "user_info">
         <div class="dishdetails">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="dishtitle">
-                        <b><%= @user_details[0].name %><br></b>
+                <br>
+                <div class = "details">
+                    <div class="user_name">
+                        <b>My Profile<br></b>
                     </div>
-                    <b>CONTACT INFORMATION <br><br></b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="details"> 
+                    <div class = "quantity">
+                        <b>CONTACT INFORMATION <br><br></b>
+                    </div>
+                    Name : <%= @user_details[0].name %><br>
                     Email : <%= @user_details[0].email %><br>
                     Number : <%= @user_details[0].phone %><br>
                     Adresss : <%= @user_details[0].address %>, <%= @user_details[0].zipcode %><br>
-                         
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <% if @sold_dishes.count > 0 %>
-                        <b><br>SOLD DISHES </b><br>
-                        <% @sold_dishes.each do |dish| %>
-                            Name : <%= dish.dishname %><br>
+                <% if @sold_dishes.count > 0 %>
+                    <div class="details">
+                        <div class = "quantity">
+                            <b>SOLD DISHES </b><br><br>
+                        </div>
+                        <% @sold_dishes.each do |dish| %>    
+                            <div class="dishdetails">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <b><%= dish.dishname %></b> <br>
+                                        <span class="label"> CUISINE : </span> <%= dish.cuisine %><br>
+                                        <span class="label"> PRICE : </span> $<%= dish.price %><br>
+                                    </div>
+                                </div>
+                            </div>
                         <% end %>
-                    <% end %>
-                </div>
+                    </div>
+                <% end %>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <% if @unsold_dishes.count > 0 %>
-                        <b><br> CURRENTLY SELLING DISHES</b> <br><br>
+                <% if @unsold_dishes.count > 0 %>
+                    <div class="details">
+                        <div class = "quantity">
+                            <b> CURRENTLY SELLING DISHES</b> <br><br>
+                        </div>
                         <% @unsold_dishes.each do |dish| %>
-                            <%= dish.dishname %> <br>
+                            <div class="dishdetails">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <b><%= dish.dishname %></b> <br>
+                                        <span class="label">CUISINE : </span> <%= dish.cuisine %><br>
+                                        <span class="label">PRICE : </span> $<%= dish.price %><br>
+                                        <span class="label">PORTIONS REMAINING : </span><%= dish.quantity %><br><br>
+                                    </div>
+                                </div>
+                            </div>
                         <% end %>
-                    <% end %>
-                </div>
-            </div>
+                    </div>
+                <% end %>
+            </div>    
         </div>
     </div>
 </body>
