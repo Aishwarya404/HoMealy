@@ -89,10 +89,10 @@
                 <br>
                 <div class="row">
                     <div class= "col-md-6">
-                        FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
+                        FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: params[:cuisine])%>
                     </div>
                     <div class= "col-md-6">
-                        FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: "All")%>
+                        FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: params[:price])%>
                     </div>
                 </div>
                 <br>
