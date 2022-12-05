@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-29T19:05:14-05:00">2022-11-29T19:05:14-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-05T12:09:47-05:00">2022-12-05T12:09:47-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  98.79%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.78
+         1.73
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>246</b> relevant lines,
-    <span class="green"><b>246</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>248</b> relevant lines,
+    <span class="green"><b>245</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  98.79%
 </span>
 )
   </div>
@@ -77,7 +77,7 @@
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">10.00</td>
+            <td class="cell--number">8.80</td>
             
           </tr>
         
@@ -94,12 +94,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#75623d57e589a357c719102b9be77df587b6f944" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">55</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">2.72</td>
+            <td class="green strong cell--number t-file__coverage">90.32 %</td>
+            <td class="cell--number">56</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">28</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">2.52</td>
             
           </tr>
         
@@ -176,7 +176,7 @@
             <td class="cell--number">12</td>
             <td class="cell--number">12</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.33</td>
+            <td class="cell--number">1.25</td>
             
           </tr>
         
@@ -367,8 +367,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="46" data-linenumber="6">
-            <span class="hits">46</span>
+          <li class="covered" data-hits="40" data-linenumber="6">
+            <span class="hits">40</span>
             
 
             
@@ -704,7 +704,7 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  90.32%
 </span>
 
       lines covered
@@ -713,9 +713,9 @@
     
 
     <div class="t-line-summary">
-      <b>29</b> relevant lines.
-      <span class="green"><b>29</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>31</b> relevant lines.
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -776,7 +776,7 @@
 
             
 
-            <code class="ruby">		@user_dish_zipcode = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.zipcode = ? and users.email != ?&quot;, @current_user.zipcode, @current_user.email])</code>
+            <code class="ruby">		@user_dish_zipcode = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity &gt; 0 and users.zipcode = ? and users.email != ?&quot;, @current_user.zipcode, @current_user.email])</code>
           </li>
         </div>
       
@@ -787,7 +787,7 @@
 
             
 
-            <code class="ruby">		@user_dish_cuisine = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.cuisine = ? and users.email != ?&quot;, @current_user.favorite_cuisine, @current_user.email])</code>
+            <code class="ruby">		@user_dish_cuisine = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity &gt; 0 and dishes.cuisine = ? and users.email != ?&quot;, @current_user.favorite_cuisine, @current_user.email])</code>
           </li>
         </div>
       
@@ -1073,7 +1073,7 @@
 
             
 
-            <code class="ruby">		@user_dish = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?&quot;, @current_user.email, dishname_key, seller_key, cuisine_key, price_key[0], price_key[1]])</code>
+            <code class="ruby">		@user_dish = Dish.find_by_sql([&quot;SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity &gt; 0 and users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?&quot;, @current_user.email, &#39;%&#39;+dishname_key+&#39;%&#39;, &#39;%&#39;+seller_key+&#39;%&#39;, cuisine_key, price_key[0], price_key[1]])</code>
           </li>
         </div>
       
@@ -1221,73 +1221,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="47">
+          <li class="covered" data-hits="2" data-linenumber="46">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">		if dish.quantity == 0</code>
+            <code class="ruby">		dish.save(validate: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">			Dish.destroy_by(dishname: params[:dishname], user_email: params[:email])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
-            <code class="ruby">		else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">			dish.save</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">		end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -1298,7 +1243,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="53">
+          <li class="covered" data-hits="2" data-linenumber="48">
             <span class="hits">2</span>
             
 
@@ -1309,7 +1254,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -1320,7 +1265,73 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	def profile</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">		@user_details = User.find_by_sql([&quot;SELECT * from users where email = ?&quot;, @current_user.email])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">		@sold_dishes = User.find_by_sql([&quot;SELECT * from dishes where user_email = ? and quantity = 0&quot;, @current_user.email])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">		@unsold_dishes = User.find_by_sql([&quot;SELECT * from dishes where user_email = ? and quantity &gt; 0&quot;, @current_user.email])</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -2516,8 +2527,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="4">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="4" data-linenumber="4">
+            <span class="hits">4</span>
             
 
             

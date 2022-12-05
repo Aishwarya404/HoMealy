@@ -9,18 +9,16 @@ input {
     width: 100%;
 }
 
-button {
+
+button[type=button] {
     margin-top: 10px;
     float: right;
-}
-
-a {
     color: white;
     font-weight: 500;
     font-size: 14px;
 }
 
-a:hover {
+button[type=button]:hover {
     color: lightgrey;
     text-decoration: none;
 }
@@ -41,4 +39,9 @@ input[type=submit] {
 
 input[type=submit]:hover {
     color: gray;
+}
+
+.error {
+    color: rgb(197, 0, 0);
+    font-weight: 500;
 }
