@@ -14,18 +14,28 @@
  */
 
 body {
+    /* background-image: url("wallpaper5.jpeg"); */
     background-image: url("wallpaper2.jpeg");
-    background-size: cover
+    /* background-size: cover; */
 }
 
 .fa {
-    color: white;
+    /* color: #4F4846; */
+    color: gray;
     font-size: 30px;
     float: right;
 }
 
-#currentUser {
-    color: white;
+.fa:hover {
+    /* color: #e8cebf */
+    color: lightgrey
+}
+
+.currentUser {
+    /* color:#4F4846 !important; */
+    color: white !important;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .navbar {
@@ -33,4 +43,14 @@ body {
     top: 0;
     width: 100%;
     z-index: 100;
+}
+
+.navbar-custom {
+    /* background-color: #ddaf94 !important; */
+    background-color: black !important;
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
 }
