@@ -12,6 +12,15 @@ body {
     /* border: 7px solid #4F4846 */
 }
 
+.user_info {  
+    /* background-color: rgba(253, 248, 245, 0.5); */
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+    width: 50%;
+    padding: 50px;
+    /* border: 7px solid #4F4846 */
+}
+
 #dishButton {
     width: fit-content;
     position: fixed;
@@ -39,16 +48,35 @@ body {
     margin-bottom: 25px;
 }
 
+.details{
+    /* background-color: #FDF8F5; */
+    width : 100%;
+    background-color: rgba(255, 255, 255, 0.807);
+    padding: 25px;
+
+    
+}
+
 .dishtitle{
     /* font-family: "Georgia", Times, serif; */
     font-size: 20px;
     margin-bottom: 10px;
 }
 
+.user_name{
+    /* font-family: "Georgia", Times, serif; */
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin: auto;
+    text-align: center;
+
+}
+
 .dishdetails{
     /* font-family: "Georgia", Times, serif; */
     font-size: 17px;
 }
+
 
 .buy_button{
     text-align: center;

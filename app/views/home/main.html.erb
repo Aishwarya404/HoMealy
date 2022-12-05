@@ -10,8 +10,8 @@
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')"> Dishes at <%= @current_user.zipcode %> </button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')"> <%= @current_user.favorite_cuisine %> Dishes </button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">All Dishes</button>
-            
         </div>
+        
         <div id="zipcode" class="tabcontent">
             <br>
             <% if @user_dish_zipcode.count > 0 %>
