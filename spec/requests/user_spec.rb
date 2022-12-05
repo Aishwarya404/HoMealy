@@ -73,4 +73,12 @@ RSpec.describe "Users", type: :request do
       expect(response).to redirect_to(home_index_path)
     end
   end
+
+  describe "POST /home/profile" do
+    it "returns http success" do
+      post '/login', params: { email: "bloop2@example.com", password: "abcdef" }
+      get "/home/profile"
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
