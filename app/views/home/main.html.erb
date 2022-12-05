@@ -69,7 +69,7 @@
             <% else %>
                 <div class="row">
                     <div class="no_items">
-                        <h3> No items found near <%= @current_user.zipcode %>! </h3>
+                        No items found !
                     </div>
                 </div>
             <% end %>
@@ -157,7 +157,7 @@
             <% else %>
                 <div class="row">
                     <div class="no_items">
-                        <h3> No items found! </h3>
+                        No items found!
                     </div>
                 </div>
             <% end %>
@@ -221,7 +221,7 @@
             <% else %>
                 <div class="row">
                     <div class="no_items">
-                        No items found for <%= @current_user.favorite_cuisine %> cuisine!
+                        No items found !
                     </div>
                 </div>
             <% end %>
@@ -267,8 +267,8 @@
         </script> 
         
         <div > 
-            <button type="button" class="btn btn-secondary" id="dishButton">
-                <a href="/dishes/new" method="post"> SELL A DISH </a>
+            <button type="button" class="btn btn-secondary" id="dishButton" onclick="window.location.href='/dishes/new'">
+                SELL A DISH
             </button>
         </div>
     </div>

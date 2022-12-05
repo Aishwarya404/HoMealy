@@ -2,8 +2,8 @@ class HomeController < ApplicationController
     def main
 		return redirect_to login_path, alert: 'You must be logged in to access this page.' if @current_user.nil?
 		
-		@user_dish_zipcode = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.zipcode = ? and users.email != ?", @current_user.zipcode, @current_user.email])
-		@user_dish_cuisine = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.cuisine = ? and users.email != ?", @current_user.favorite_cuisine, @current_user.email])
+		@user_dish_zipcode = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity > 0 and users.zipcode = ? and users.email != ?", @current_user.zipcode, @current_user.email])
+		@user_dish_cuisine = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity > 0 and dishes.cuisine = ? and users.email != ?", @current_user.favorite_cuisine, @current_user.email])
 
 		if params[:dishname].nil? or params[:dishname] == ""
 			dishname_key = '%%'
@@ -29,7 +29,7 @@ class HomeController < ApplicationController
 			price_key = params[:price].split(", ").map(&:to_i)
 		end
 
-		@user_dish = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?", @current_user.email, '%'+dishname_key+'%', '%'+seller_key+'%', cuisine_key, price_key[0], price_key[1]])
+		@user_dish = Dish.find_by_sql(["SELECT * from dishes INNER JOIN users on dishes.user_email = users.email where dishes.quantity > 0 and users.email != ? and dishes.dishname like ? and users.name like ? and dishes.cuisine like ? and dishes.price between ? and ?", @current_user.email, '%'+dishname_key+'%', '%'+seller_key+'%', cuisine_key, price_key[0], price_key[1]])
     end
 
     def index 
@@ -43,12 +43,7 @@ class HomeController < ApplicationController
 		dish = Dish.find_by(dishname: params[:dishname], user_email: params[:email])
 		
 		dish.quantity = dish.quantity - params[:quantity].to_i
-
-		if dish.quantity == 0
-			Dish.destroy_by(dishname: params[:dishname], user_email: params[:email])
-		else
-			dish.save
-		end
+		dish.save(validate: false)
 
 		return redirect_to home_main_path
 	end
