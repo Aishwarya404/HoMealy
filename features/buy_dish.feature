@@ -16,36 +16,36 @@ Feature: Set of dishes are present in the DB
 
     Scenario: User tries to buy a dish
 
-        And I should see "Only 5 servings left!"
+        And I should see "Only 5 servings left !"
         And I press "BUY"
-        And I press "PLACE ORDER"
-        Then I should see "Only 4 servings left!"
+        And I press "CONFIRM"
+        Then I should see "Only 4 servings left !"
 
     Scenario: User tries to buy multiple quantities of a dish
 
-        And I should see "Only 5 servings left!"
+        And I should see "Only 5 servings left !"
         And I press "BUY"
         And I select "3" from "quantity"
-        And I press "PLACE ORDER"
-        Then I should see "Only 2 servings left!"
+        And I press "CONFIRM"
+        Then I should see "Only 2 servings left !"
 
     Scenario: User cancels order
 
-        And I should see "Only 5 servings left!"
+        And I should see "Only 5 servings left !"
         And I press "BUY"
         And I select "3" from "quantity"
         And I press "CANCEL"
-        Then I should see "Only 5 servings left!"
+        Then I should see "Only 5 servings left !"
 
     Scenario: User orders all available quantities
 
-        And I should see "Only 5 servings left!"
+        And I should see "Only 5 servings left !"
         And I press "BUY"
         And I select "3" from "quantity"
-        And I press "PLACE ORDER"
+        And I press "CONFIRM"
         And I press "BUY"
         And I select "2" from "quantity"
-        And I press "PLACE ORDER"
+        And I press "CONFIRM"
         Then I should not see "Test Dish"
 
         

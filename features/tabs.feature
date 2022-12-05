@@ -19,23 +19,23 @@ Feature: Set of dishes are present in the DB
     Scenario: User clicks on zipcode tab
 
         Given I am on the Main page
-        And I press "NEAR YOU"
+        And I press "Dishes at 10028"
         Then I should see "Random Dish"
-        And I should see "Today's dishes for you near 10028"
+        # And I should see "Today's dishes for you near 10028"
         And I should not see "No items found"
 
     Scenario: User clicks on cuisine tab
 
         Given I am on the Main page
-        And I press "FAVORITE CUISINE"
+        And I press "Thai Dishes"
         Then I should see "Cheap Dish"
-        And I should see "Today's Thai dishes for you"
+        # And I should see "Today's Thai dishes for you"
         And I should not see "No items found"
 
     Scenario: User clicks on All tab
 
         Given I am on the Main page
-        And I press "ALL"
+        And I press "All Dishes"
         Then I should see "FILTER BY"
         And I should see "Test Dish"
         And I should see "Random Dish"

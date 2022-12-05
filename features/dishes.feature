@@ -16,7 +16,6 @@ Feature: Set of dishes are present in the DB
         And I fill in "password" with "test"
         And I press "LOG IN"
         Then I should be on the Main page
-        And I should see "Logged in as tony"
 
     Scenario: User tries to list a new dish for sale
         Given I am on the Main page
@@ -34,7 +33,7 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_price" with "20"
         And I fill in "dish_quantity" with "5"
         And I select "Thai" from "dish_cuisine"
-        And I press "Upload Dish"
+        And I press "UPLOAD DISH"
         Then I should be on the Main page
         And I should not see "Pad Thai"
 
@@ -43,7 +42,7 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_dishname" with "Pad Thai"
         And I fill in "dish_price" with "20"
         And I select "Thai" from "dish_cuisine"
-        And I press "Upload Dish"
+        And I press "UPLOAD DISH"
         Then I should be on the Add Dish error page
         And I should not see "Dishes for you"
         And I should see "can't be blank"
@@ -54,13 +53,8 @@ Feature: Set of dishes are present in the DB
         And I fill in "dish_price" with "20"
         And I select "Thai" from "dish_cuisine"
         And I fill in "dish_quantity" with "abc"
-        And I press "Upload Dish"
+        And I press "UPLOAD DISH"
         Then I should be on the Add Dish error page
         And I should not see "Dishes for you"
         And I should see "is not a number"
 
-    Scenario: Email pre-populated when user tries to list new dish
-        Given I am on the Main page
-        And I follow "SELL A DISH"
-        Then I should be on the Add Dish page
-        And I should see "tony"
