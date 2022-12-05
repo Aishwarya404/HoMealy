@@ -9,7 +9,7 @@
         <div class="tab">
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')"> Dishes at <%= @current_user.zipcode %> </button>
             <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')"> <%= @current_user.favorite_cuisine %> Dishes </button>
-            <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">ALL DISHES</button>
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">All Dishes</button>
             
         </div>
         <div id="zipcode" class="tabcontent">
@@ -267,8 +267,8 @@
         </script> 
         
         <div > 
-            <button type="button" class="btn btn-secondary" id="dishButton" onclick="window.location.href='/dishes/new'">
-                SELL A DISH
+            <button type="button" class="btn btn-secondary" id="dishButton">
+                 <a href="/dishes/new" method="post"> SELL A DISH </a>
             </button>
         </div>
     </div>

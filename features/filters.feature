@@ -21,7 +21,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I should see "FILTER BY SELLER"
         And I fill in "seller" with "tony"
-        And I press "Find Dishes"
+        And I press "S E A R C H"
         And I should see "Test Dish"
         And I should see "Sample Dish"
         And I should not see "Random Dish"
@@ -31,7 +31,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I should see "FILTER BY DISHNAME"
         And I fill in "dishname" with "Sample Dish"
-        And I press "Find Dishes"
+        And I press "S E A R C H"
         And I should see "Sample Dish"
         And I should not see "Random Dish"
 
@@ -40,7 +40,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I should see "FILTER BY DISHNAME"
         And I select "American" from "cuisine"
-        And I press "Find Dishes"
+        And I press "S E A R C H"
         Then I should see "Test Dish"
         And I should not see "Sample Dish"
         And I should not see "Random Dish"
@@ -51,7 +51,7 @@ Feature: Set of dishes are present in the DB
         And I should see "FILTER BY DISHNAME"
         And I select "Chinese" from "cuisine"
         And I fill in "seller" with "tony"
-        And I press "Find Dishes"
+        And I press "S E A R C H"
         Then I should see "Sample Dish"
         And I should not see "Test Dish"
         And I should not see "Random Dish"
@@ -61,7 +61,7 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I should see "FILTER BY PRICE"
         And I select "$10 - $15" from "price"
-        And I press "Find Dishes"
+        And I press "S E A R C H"
         Then I should see "Cheap Dish"
         And I should see "Sample Dish"
         And I should not see "Test Dish"

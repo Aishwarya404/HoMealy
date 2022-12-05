@@ -17,23 +17,22 @@ Scenario: Signing in with correct credentials
   And I fill in "password" with "test"
   And I press "LOG IN"
   Then I should be on the Main page
-  And I should see "Logged in as tony"
-  
+  And I should see "Welcome to HoMealy!"
 
 Scenario: signing in with wrong credentials
 
   And I fill in "password" with "wrongpassword"
   And I press "LOG IN"
   Then I should be on the Log In page
-  And I should not see "Logged in as"
+  And I should not see "Welcome to"
 
 Scenario: Logging out
   And I fill in "password" with "test"
   And I press "LOG IN"
-  Then I should see "Logged in as tony"
+  Then I should see "Welcome to HoMealy"
   And I follow "logout"
   Then I should see "HoMealy"
-  And I should not see "Logged in as"
+  And I should not see "Welcome to"
 
 
 
