@@ -22,7 +22,7 @@ Feature: Profile page visible for users
         Given I am on the Main page
         And I follow "profile"
         Then I should be on the Profile page
-        And I should see "My Profile"
+        And I should see "MY PROFILE"
     
     Scenario: User's contact information should be visible
         Given I am on the Profile page
@@ -41,6 +41,28 @@ Feature: Profile page visible for users
         Then I should not see "Bruce's Dish"
         And I should not see "CUISINE : Indian"
         And I should not see "PRICE : $25"
+    
+    Scenario: User should be able to see previously sold dishes
+        Given I follow "logout"
+        And I follow "LOG IN"
+        And I fill in "email" with "bruce@test.com"
+        And I fill in "password" with "test"
+        And I press "LOG IN"
+        Then I should be on the Main page
+        And I press "BUY"
+        And I select "5" from "quantity"
+        And I press "CONFIRM"
+        Then I should not see "Tony's Dish"
+        And I follow "logout"
+        And I follow "LOG IN"
+        And I fill in "email" with "sample@test.com"
+        And I fill in "password" with "test"
+        And I press "LOG IN"
+        Then I should be on the Main page
+        And I follow "profile"
+        Then I should see "Sold Dishes"
+        And I should see "Tony's Dish"
+        And I should see "PRICE : $15"
 
     Scenario: User should be able to navigate back to the home page
         Given I am on the Profile page
