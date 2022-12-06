@@ -27,13 +27,16 @@ input[type=submit]:hover {
     margin-bottom: 30px;
 }
 
-button {
+button[type=button] {
     margin-top: 10px;
     float: right;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
 }
 
-button:hover {
-    color: lightgray;
+button[type=button]:hover {
+    color: lightgrey;
     text-decoration: none;
 }
 

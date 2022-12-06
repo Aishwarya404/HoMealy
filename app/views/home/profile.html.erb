@@ -10,26 +10,26 @@
                 <br>
                 <div class = "details">
                     <div class="user_name">
-                        <b>My Profile<br></b>
+                        <b> MY PROFILE <br></b>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="details"> 
                     <div class = "quantity">
-                        <b>CONTACT INFORMATION <br><br></b>
+                        <b> Contact Information <br><br></b>
                     </div>
-                    Name : <%= @user_details[0].name %><br>
-                    Email : <%= @user_details[0].email %><br>
-                    Number : <%= @user_details[0].phone %><br>
-                    Adresss : <%= @user_details[0].address %>, <%= @user_details[0].zipcode %><br>
+                    <span class="label"> NAME : </span> <%= @user_details[0].name %><br>
+                    <span class="label"> EMAIL : </span> <%= @user_details[0].email %><br>
+                    <span class="label"> NUMBER : </span> <%= @user_details[0].phone %><br>
+                    <span class="label"> ADDRESS : </span> <%= @user_details[0].address %>, <%= @user_details[0].zipcode %><br>
                 </div>
             </div>
             <div class="row">
                 <% if @sold_dishes.count > 0 %>
                     <div class="details">
                         <div class = "quantity">
-                            <b>SOLD DISHES </b><br><br>
+                            <b> Sold Dishes </b><br><br>
                         </div>
                         <% @sold_dishes.each do |dish| %>    
                             <div class="dishdetails">
@@ -49,7 +49,7 @@
                 <% if @unsold_dishes.count > 0 %>
                     <div class="details">
                         <div class = "quantity">
-                            <b> CURRENTLY SELLING DISHES</b> <br><br>
+                            <b> Currently Selling Dishes </b> <br><br>
                         </div>
                         <% @unsold_dishes.each do |dish| %>
                             <div class="dishdetails">
