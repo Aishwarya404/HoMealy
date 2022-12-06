@@ -21,7 +21,6 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I press "Dishes at 10028"
         Then I should see "Random Dish"
-        # And I should see "Today's dishes for you near 10028"
         And I should not see "No items found"
 
     Scenario: User clicks on cuisine tab
@@ -29,7 +28,6 @@ Feature: Set of dishes are present in the DB
         Given I am on the Main page
         And I press "Thai Dishes"
         Then I should see "Cheap Dish"
-        # And I should see "Today's Thai dishes for you"
         And I should not see "No items found"
 
     Scenario: User clicks on All tab

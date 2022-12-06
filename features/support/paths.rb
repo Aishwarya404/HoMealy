@@ -13,6 +13,8 @@ module NavigationHelpers
 			when "the Add Dish error page" then "/dishes"	
 			when "the Sign Up page" then "/users/new"
 			when "the Sign Up error page" then "/users"
+			when "the Profile page" then "/home/profile"
+
 		end
 	end
 end
