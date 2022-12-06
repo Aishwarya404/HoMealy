@@ -11,7 +11,8 @@ User.destroy_all
 dishes = [
     {"dishname": "Fried Rice", "user_email": "as6418@columbia.edu", "price": 15.8, "quantity": 10, "cuisine": "Chinese", "description": "Fried rice with 2 eggs, sauteed in sliced garlic, carrots, onions, capsicum and more."},
     {"dishname": "Pav Bhaji", "user_email": "sh4188@columbia.edu", "price": 11.5, "quantity": 5, "cuisine": "Indian", "description": "Pav Bhaji that melts in your mouth, served with mashed vegeatables topped with butter!"},
-    {"dishname": "Chicken Biryani", "user_email": "sh4188@columbia.edu", "price": 8.5, "quantity": 8, "cuisine": "Indian", "description": "Chicken Biryani woohoo!"}
+    {"dishname": "Chicken Biryani", "user_email": "sh4188@columbia.edu", "price": 8.5, "quantity": 8, "cuisine": "Indian", "description": "Chicken Biryani woohoo!"},
+    {"dishname": "Dumplings", "user_email": "as6418@columbia.edu", "price": 8, "quantity": 8, "cuisine": "Chinese", "description": "Steamed chicken dumplings. 8 pieces per plate served with schezwan sauce!"}
 ]
 
 dishes.each do |dish|
