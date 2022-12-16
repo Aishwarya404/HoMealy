@@ -1,154 +1,275 @@
-
 <head> 
     <% content_for :stylesheets do %>
         <%= stylesheet_link_tag 'main' %>
     <% end %>
 </head>
+
 <body>
     <div id = "box" class="container"> 
-            <div class="tab">
-                <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')">Zipcode</button>
-                <button class="tablinks" data-inline="true" onclick="openPage(event, 'cuisine')">Cuisine</button>
-                <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')">All</button>
-            </div>
-       
+        <div class="tab">
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'zipcode')"> Dishes at <%= @current_user.zipcode %> </button>
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'fav_cuisine')"> <%= @current_user.favorite_cuisine %> Dishes </button>
+            <button class="tablinks" data-inline="true" onclick="openPage(event, 'all')" id="all_button">All Dishes</button>
+        </div>
+        
         <div id="zipcode" class="tabcontent">
+            <br>
             <% if @user_dish_zipcode.count > 0 %>
-                <h1> Today's dishes for based on zipcode</h1>
-                <br>
-                
                 <% @user_dish_zipcode.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> <span class="quantity">  ( Only <%= dish.quantity %> servings left ! ) </span>
                         </div>
                         <div class="dishdetails">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    
-                                    Cuisine : <%= dish.cuisine %><br>
-                                    Price : $<%= dish.price %><br>
-                                    Seller : <%= dish.name %><br>
-                                    Description : <%= dish.description %><br>
-                                    Zipcode : <%= dish.zipcode %>
+                                    <span class="label"> CUISINE : </span> <%= dish.cuisine %><br>
+                                    <span class="label"> PRICE : </span> $<%= dish.price %><br>
+                                    <span class="label"> SELLER : </span> <%= dish.name %><br>
+                                    <span class="label"> DESCRIPTION : </span> <%= dish.description %><br>
+                                    <span class="label"> ZIPCODE : </span> <%= dish.zipcode %>
                                 </div>
                                 <div class="col-md-6 col-sm-12 buy_button">
-                                    <button class = "buy"> BUY
-                                    </button>
+                                    <button class="<%= dish.dishname %> buyButton" onclick="showBuyBlock('zipcode <%= dish.dishname %>')"> BUY </button>
+                                    <div class="row buy_block" id="zipcode <%= dish.dishname %>">
+                                        <div class="col-md-12">
+                                            <%= form_tag(home_buy_path, method: :put) do %>
+                                                <div class="row">
+                                                    <div class="col-md-3"> </div>
+                                                    <div class= "col-md-3">
+                                                        <%= select_tag :quantity, options_for_select(1..dish.quantity), class: 'buy'%>
+                                                    </div>
+                                                    <div class= "col-md-3">
+                                                        <%= submit_tag 'CONFIRM', class: 'buy confirm'%>
+                                                    </div>
+                                                    <div class="col-md-3"> </div>
+                                                    <%= hidden_field_tag :dishname, dish.dishname %>
+                                                    <%= hidden_field_tag :name, dish.name %>
+                                                    <%= hidden_field_tag :email, dish.email %>
+                                                    <%= hidden_field_tag :address, dish.address %>
+                                                    <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                                    <%= hidden_field_tag :phone, dish.phone %>
+                                                </div>
+                                            <% end %>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4"> </div>
+                                                <div class="col-md-4">
+                                                    <button class = "buy" onclick="hideBuyBlock('zipcode <%= dish.dishname %>')"> CANCEL </button>
+                                                </div>
+                                                <div class="col-md-4"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="no_items">
+                        No items found !
+                    </div>
+                </div>
             <% end %>
         </div>
+        
 
         <div id="all" class="tabcontent">
-            <% if @user_dish.count > 0 %>
-                <%= form_tag(home_main_path, method: :get, id: "search") do %>
-                    <div class="row">
-                        <div class= "col-md-6">
-                            FILTER BY SELLER <%= text_field_tag :seller, params[:seller] %>
-                        </div>
-                        <div class="col-md-6">
-                            FILTER BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
-                        </div>
+            <%= form_tag(home_main_path, method: :get, id: "search") do %>
+                <div class="row">
+                    <div class= "col-md-6">
+                        FILTER BY SELLER <%= text_field_tag :seller, params[:seller] %>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class= "col-md-6">
-                            FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"], ["All", "All"]], selected: "All")%>
-                        </div>
-                        <div class= "col-md-6">
-                            FILTER BY PRICE <%= select_tag :price, options_for_select([["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"], ["All", "All"]], selected: "All")%>
-                        </div>
+                    <div class="col-md-6">
+                        FILTER BY DISHNAME <%= text_field_tag :dishname, params[:dishname] %>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <%= submit_tag 'Show search results'%>
-                        </div>
-                    </div>
-                <% end %>
-                <h1> Today's dishes for you </h1>
+                </div>
                 <br>
+                <div class="row">
+                    <div class= "col-md-6">
+                        FILTER BY CUISINE <%= select_tag :cuisine, options_for_select([["All", "All"], ["American", "American"], ["Chinese", "Chinese"], ["French", "French"], ["Italian","Italian"], ["Indian","Indian"], ["Mexican","Mexican"], ["Thai","Thai"]], selected: params[:cuisine])%>
+                    </div>
+                    <div class= "col-md-6">
+                        FILTER BY PRICE <%= select_tag :price, options_for_select([["All", "All"], ["< $5", "0, 5"], ["$5 - $10", "5, 10"],["$10 - $15", "10, 15"],["$15 - $20", "15, 20"], ["> $20", "20, 100"]], selected: params[:price])%>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <%= submit_tag 'S E A R C H', class: 'find'%>
+                    </div>
+                </div>
+            <% end %>
+            <% if @user_dish.count > 0 %>
                 <% @user_dish.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> <span class="quantity"> ( Only <%= dish.quantity %> servings left ! ) </span>
                         </div>
                         <div class="dishdetails">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    Cuisine : <%= dish.cuisine %><br>
-                                    Price : $<%= dish.price %><br>
-                                    Seller : <%= dish.name %><br>
-                                    Description : <%= dish.description %><br>
-                                    Zipcode : <%= dish.zipcode %>
+                                    <span class="label"> CUISINE : </span> <%= dish.cuisine %><br>
+                                    <span class="label"> PRICE : </span> $<%= dish.price %><br>
+                                    <span class="label"> SELLER : </span> <%= dish.name %><br>
+                                    <span class="label"> DESCRIPTION : </span> <%= dish.description %><br>
+                                    <span class="label"> ZIPCODE : </span> <%= dish.zipcode %>
                                 </div>
                                 <div class="col-md-6 col-sm-12 buy_button">
-                                    <button class = "buy"> BUY
-                                    </button>
+                                    <button class="<%= dish.dishname %> buyButton" onclick="showBuyBlock('all <%= dish.dishname %>')"> BUY </button> 
+                                    <div class="row buy_block" id="all <%= dish.dishname %>">
+                                        <div class='col-md-12'>
+                                            <%= form_tag(home_buy_path, method: :put) do %>
+                                                <div class="row">
+                                                    <div class="col-md-3"> </div>
+                                                    <div class= "col-md-3">
+                                                        <%= select_tag :quantity, options_for_select(1..dish.quantity), class: 'buy'%>
+                                                    </div>
+                                                    <div class= "col-md-3">
+                                                        <%= submit_tag 'CONFIRM', class: 'buy confirm'%>
+                                                    </div>
+                                                    <div class="col-md-3"> </div>
+                                                    <%= hidden_field_tag :dishname, dish.dishname %>
+                                                    <%= hidden_field_tag :name, dish.name %>
+                                                    <%= hidden_field_tag :email, dish.email %>
+                                                    <%= hidden_field_tag :address, dish.address %>
+                                                    <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                                    <%= hidden_field_tag :phone, dish.phone %>
+                                                </div>
+                                            <% end %>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4"> </div>
+                                                <div class="col-md-4">
+                                                    <button class = "buy" onclick="hideBuyBlock('all <%= dish.dishname %>')"> CANCEL </button>
+                                                </div>
+                                                <div class="col-md-4"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="no_items">
+                        No items found!
+                    </div>
+                </div>
             <% end %>
         </div>
+        
 
-        <div id="cuisine" class="tabcontent">
+        <div id="fav_cuisine" class="tabcontent">
             <% if @user_dish_cuisine.count > 0 %>
-                <h1> Today's dishes for you based on favorite cuisine</h1>
                 <br>
                 <% @user_dish_cuisine.each do |dish| %>
                     <div class="dish"> 
                         <div class="dishtitle">
-                            <b><%= dish.dishname %></b> (Only <%= dish.quantity %> servings left! )
+                            <b><%= dish.dishname %></b> <span class="quantity">  ( Only <%= dish.quantity %> servings left ! ) </span>
                         </div>
                         <div class="dishdetails">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    Cuisine : <%= dish.cuisine %><br>
-                                    Price : $<%= dish.price %><br>
-                                    Seller : <%= dish.name %><br>
-                                    Description : <%= dish.description %><br>
-                                    Zipcode : <%= dish.zipcode %>
+                                    <span class="label"> CUISINE : </span> <%= dish.cuisine %><br>
+                                    <span class="label"> PRICE : </span> $<%= dish.price %><br>
+                                    <span class="label"> SELLER : </span> <%= dish.name %><br>
+                                    <span class="label"> DESCRIPTION : </span> <%= dish.description %><br>
+                                    <span class="label"> ZIPCODE : </span> <%= dish.zipcode %>
                                 </div>
                                 <div class="col-md-6 col-sm-12 buy_button">
-                                    <button class = "buy"> BUY
-                                    </button>
+                                    <button class="<%= dish.dishname %> buyButton" onclick="showBuyBlock('cuisine <%= dish.dishname %>')"> BUY </button>
+                                    <div class="row buy_block" id="cuisine <%= dish.dishname %>">
+                                        <div class="col-md-12">
+                                            <%= form_tag(home_buy_path, method: :put) do %>
+                                                <div class="row">
+                                                    <div class="col-md-3"> </div>
+                                                    <div class= "col-md-3">
+                                                        <%= select_tag :quantity, options_for_select(1..dish.quantity), class: 'buy'%>
+                                                    </div>
+                                                    <div class= "col-md-3">
+                                                        <%= submit_tag 'CONFIRM', class: 'buy confirm'%>
+                                                    </div>
+                                                    <div class="col-md-3"> </div>
+                                                    <%= hidden_field_tag :dishname, dish.dishname %>
+                                                    <%= hidden_field_tag :name, dish.name %>
+                                                    <%= hidden_field_tag :email, dish.email %>
+                                                    <%= hidden_field_tag :address, dish.address %>
+                                                    <%= hidden_field_tag :zipcode, dish.zipcode %>
+                                                    <%= hidden_field_tag :phone, dish.phone %>
+                                                </div>
+                                            <% end %>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4"> </div>
+                                                <div class="col-md-4">
+                                                    <button class = "buy" onclick="hideBuyBlock('cuisine <%= dish.dishname %>')"> CANCEL </button>
+                                                </div>
+                                                <div class="col-md-4"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                    <div class="no_items">
+                        No items found !
+                    </div>
+                </div>
             <% end %>
         </div>
+        
     
         <script>
-        function openPage(evt, category) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            console.log(tabcontent);
-            for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+            function openPage(evt, category) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                console.log(tabcontent);
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                let content = document.getElementById(category)
+                console.log(content)
+                content.style.display = "block";
+                evt.currentTarget.className += " active";
+
+                buy_blocks = document.getElementsByClassName("buy_block")
+                for (i = 0; i < buy_blocks.length; i++) {
+                    buy_blocks[i].style.display = "none";
+                }
             }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+            $(document).ready(function () {
+                document.getElementById("all_button").click(); 
+            });
+
+            function showBuyBlock(dish_id) {
+                var x = document.getElementById(dish_id);
+                x.style.display = "block";
             }
-            let content = document.getElementById(category)
-            console.log(content)
-            content.style.display = "block";
-            
-            box.append(content)
-        }
-        </script>     
-        <div id = "box" class="container"> 
-        <button type="button" class="btn btn-secondary">
-            <a href="/dishes/new" method="post"> ADD A NEW DISH </a>
-        </button>
+
+            function hideBuyBlock(dish_id) {
+                var x = document.getElementById(dish_id);
+                x.style.display = "none";
+            }
+        </script> 
+        
+        <div > 
+            <button type="button" class="btn btn-secondary" id="dishButton" onclick="window.location.href = '/dishes/new'">
+                 <a href="/dishes/new" method="post"> SELL A DISH </a>
+            </button>
         </div>
     </div>
 </body>

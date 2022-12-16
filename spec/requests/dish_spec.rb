@@ -4,15 +4,18 @@ SimpleCov.start
 
 RSpec.describe "Dishes", type: :request do
   describe "GET /dishes/new" do
+    User.destroy_by(email: "bloop1@example.com")
+
     it "redirect to login if not logged in" do
       get "/dishes/new"
       expect(response).to redirect_to(login_path)
     end
 
-    @user = User.new(name: "User", email: "bloop@example.com", password: "abcdef", zipcode: "10027", address: "3153 Broadway")
+    @user = User.new(name: "User", email: "bloop1@example.com", password: "abcdef", address: "3153 Broadway", zipcode: "10027", phone: "6462881247")
     @user.save
+
     it "correct password" do
-      post '/login', params: { email: "bloop@example.com", password: "abcdef" }
+      post '/login', params: { email: "bloop1@example.com", password: "abcdef" }
       expect(response).to redirect_to(home_main_path)
       get "/dishes/new"
       expect(response).to render_template("layouts/application")

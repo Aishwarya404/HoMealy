@@ -8,4 +8,5 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:password) }
   it { should validate_presence_of(:zipcode) }
   it { should validate_presence_of(:address) }
+  it { should validate_presence_of(:phone) }
 end

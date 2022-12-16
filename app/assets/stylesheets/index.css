@@ -12,22 +12,26 @@
 .title {
     font-size: 36px;
     font-weight: bold;
+    /* color: #4F4846 */
+    color: black
 }
 
 .subtitle {
     font-size: 20px;
+    margin-top: 10px;
     font-style: italic;
-    color: brown;
+    font-weight: 600;
+    color: green;
 }
 
 .row {
     margin-top: 30px;
 }
 
-button {
+button[type=button] {
     width: 100%;
-    padding: 0;
-    margin-top: 30px
+    padding: 5px;
+    margin-top: 30px;
 }
 
 a {
@@ -37,5 +41,7 @@ a {
 }
 
 a:hover {
-    color: lightgrey
+    color: lightgrey;
+    text-decoration: none;
 }
+

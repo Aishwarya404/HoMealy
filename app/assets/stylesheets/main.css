@@ -4,53 +4,150 @@ body {
 }
 
 .container {  
-    background-color: #e7f0f3;
+    /* background-color: rgba(253, 248, 245, 0.5); */
+    background-color: rgba(255, 255, 255, 0.7);
     margin: auto;
-    width: 60%;
+    width: 75%;
+    padding: 0;
+    /* border: 7px solid #4F4846 */
+}
+
+.user_info {  
+    /* background-color: rgba(253, 248, 245, 0.5); */
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+    width: 50%;
     padding: 50px;
+    /* border: 7px solid #4F4846 */
+}
+
+#dishButton {
+    width: fit-content;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border: 1px solid green;
+    padding: 20px;
+    border-radius: 100%;
+    /* background-color: #255150; */
+    background-color: green;
+    font-weight: 600;
+}
+
+#dishButton:hover {
+    background-color: rgb(0, 180, 0);
+    border: 1px solid rgb(0, 180, 0);
+    color: white;
 }
 
 .dish{
-    background-color: #ffffff;
-    padding: 30px;
-    margin-bottom: 20px;
+    /* background-color: #FDF8F5; */
+    background-color: white;
+    padding: 25px;
+    border: 2px solid lightgray;
+    margin-bottom: 25px;
+}
+
+.details{
+    /* background-color: #FDF8F5; */
+    width : 100%;
+    background-color: rgba(255, 255, 255, 0.807);
+    padding: 25px;
+
+    
 }
 
 .dishtitle{
-    font-family: "Georgia", Times, serif;
-    font-size: larger;
+    /* font-family: "Georgia", Times, serif; */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.user_name{
+    /* font-family: "Georgia", Times, serif; */
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin: auto;
+    text-align: center;
+
 }
 
 .dishdetails{
-    font-family: "Georgia", Times, serif;
-    font-size: medium;
+    /* font-family: "Georgia", Times, serif; */
+    font-size: 17px;
 }
+
 
 .buy_button{
     text-align: center;
+    /* font-family: "Georgia", Times, serif; */
 }
 
-button{
-    margin: auto;
-    width: 100%;
+.no_items{
+    font-size: 20px;
+    font-family: "Georgia", Times, serif;
+    text-align: center;
+    margin:0 auto;
+    color: black;
+    font-weight: 400;
+}
+
+.buyButton{
+    width: 60%;
+    /* border: 1px solid #4F4846; */
+    border: 1px solid black;
+    border-radius: 10px;
+    /* background-color: #4F4846; */
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.buyButton:hover {
+    /* color: #ddaf94 */
+    /* background-color: darkgray;
+    border: 1px solid darkgray; */
+    color: darkgray
 }
 
 .buy{
-    width: 30% !important;
-    margin: auto;
+    width: 100% !important;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
     text-align: center;
-    background-color: grey;
+    font-size: 12px;
+    padding: 5px
+}
 
+.buy:hover {
+    border: 1px solid white
+}
+
+.confirm {
+    /* background-color: #255150; */
+    background-color: green;
+    color: white
+}
+
+.confirm:hover {
+    /* border: 2px solid #255150 */
+    background-color: rgb(0, 180, 0);
+}
+
+.buy_block {
+    margin-top: 15px;
 }
 
 a {
     color: white;
     font-weight: 500;
-    font-size: 16px
+    font-size: 16px;
 }
 
 a:hover {
-    color: lightgray;
+    /* color: #ddaf94; */
+    color: white;
+    text-decoration: none;
 }
 
 input {
@@ -59,8 +156,8 @@ input {
 
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    /* background-color: #FDF8F5; */
+    background-color: white;
 }
 
 /* Style the buttons inside the tab */
@@ -71,27 +168,34 @@ input {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: 300;
+    /* font-family: URW Chancery L, cursive; */
     width: 33.33% !important;
+    height: 60px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    background-color: #ddd;
+    /* background-color: #e8cebf; */
+    background-color: lightgray;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ccc;
+    /* background-color: #ddaf94; */
+    background-color: darkgrey;
+    color: black;
+    font-weight: 500;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
+    padding: 30px;
+    padding-top: 10;
+    color: #4F4846
 }
 
 select {
@@ -99,7 +203,39 @@ select {
 }
 
 #search {
-    padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    /* background-color: #FDF8F5;
+    padding: 10px */
+}
+
+.label {
+    color: #4F4846;
+    font-weight: bold;
+    font-size: 13px
+}
+
+.find {
+    /* background-color:#FDF8F5; */
+    /* color: #4F4846; */
+    /* border: 1px solid #FDF8F5 */
     background-color: white;
+    border: 1px solid white;
+    color: black;
+    font-weight: 600;
+}
+
+.find:hover {
+    /* color: #ddaf94 */
+    background-color: lightgray;
+    border: 1px solid lightgray
+}
+
+.quantity {
+    color: rgb(0, 180, 0);
+    font-weight: 500;
+}
+
+span {
+    padding: 0 !important;
 }
